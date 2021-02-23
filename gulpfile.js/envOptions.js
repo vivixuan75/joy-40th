@@ -1,6 +1,7 @@
 const srcPath = './app'
 const distPath = './dist'
 const nodePath = './node_modules'
+const root = './..'
 
 let envOptions = {
     string: 'env',
@@ -30,13 +31,9 @@ let envOptions = {
         ],
         path: `${distPath}/assets/style`,
         tailwindcss: {
-            src: [
-                `${srcPath}/assets/style/index.css`
-            ],
-            path: [
-                `${distPath}/assets/style/`
-            ]
-        }
+            src: [`${srcPath}/assets/style/index.css`],
+            path: [`${distPath}/assets/style/`],
+        },
     },
     javascript: {
         src: [`${srcPath}/assets/js/**/*.js`],
@@ -53,6 +50,16 @@ let envOptions = {
     },
     clean: {
         src: distPath,
+    },
+    prettier: {
+        config: `${root}/.prettierrc.js`,
+        src: [
+            `${srcPath}/**/*.html`,
+            `${srcPath}/**/*.css`,
+            `${srcPath}/**/*.scss`,
+            `${srcPath}/**/*.js`,
+        ],
+        dest: `${srcPath}`
     },
     browserDir: distPath,
     deploySrc: `${distPath}/**/*`,

@@ -66,7 +66,6 @@ function tailwindcss() {
         .pipe($.postcss([require('tailwindcss'), autoprefixer()]))
         .pipe($.if(options.env === 'prod', purgecss(purge_options)))
         .pipe(gulp.dest(envOptions.style.tailwindcss.path))
-    
 }
 
 function babel() {
@@ -104,6 +103,14 @@ function browser() {
     })
 }
 
+function prettier(){
+    const src = ['./app/**/*.js', './app/*.html', './app/**/*.css', './app/**/*.scss']
+    return gulp
+        .src(envOptions.prettier.src)
+        .pipe($.prettier(envOptions.prettier.config))
+        .pipe(gulp.dest(envOptions.prettier.dest))
+}
+
 function clean() {
     return gulp
         .src(envOptions.clean.src, {
@@ -118,6 +125,7 @@ function deploy() {
 }
 
 function watch() {
+    // gulp.watch(envOptions.prettier.src, gulp.series(prettier))
     gulp.watch(envOptions.html.src, gulp.series(layoutHTML))
     gulp.watch(envOptions.html.ejsSrc, gulp.series(layoutHTML))
     gulp.watch(envOptions.javascript.src, gulp.series(babel))
@@ -130,9 +138,19 @@ exports.deploy = deploy
 
 exports.clean = clean
 
-exports.build = gulp.series(clean, copyFile, layoutHTML, sass, tailwindcss, babel, vendorsJs)
+exports.build = gulp.series(
+    prettier,
+    clean,
+    copyFile,
+    layoutHTML,
+    sass,
+    tailwindcss,
+    babel,
+    vendorsJs
+)
 
 exports.default = gulp.series(
+    prettier,
     clean,
     copyFile,
     layoutHTML,
