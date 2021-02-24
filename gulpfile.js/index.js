@@ -58,7 +58,7 @@ function sass() {
 
 function tailwindcss() {
     const purge_options = {
-        content: ['./app/**/*.pug', './app/**/*.js'],
+        content: ['./app/**/*.ejs', './app/**/*.html', './app/**/*.js'],
         defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
     }
     return gulp
