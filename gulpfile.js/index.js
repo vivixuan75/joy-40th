@@ -4,8 +4,6 @@ const autoprefixer = require('autoprefixer')
 const minimist = require('minimist')
 const browserSync = require('browser-sync').create()
 const { envOptions } = require('./envOptions')
-const postcss = require('gulp-postcss')
-const purgecss = require('gulp-purgecss')
 
 let options = minimist(process.argv.slice(2), envOptions)
 //現在開發狀態
@@ -42,11 +40,16 @@ function layoutHTML() {
 
 function sass() {
     const plugins = [autoprefixer()]
+    const purge_options = {
+        content: ['./app/**/*.ejs', './app/**/*.html', './app/**/*.js']
+    }
     return gulp
         .src(envOptions.style.src)
         .pipe($.sourcemaps.init())
         .pipe($.sass().on('error', $.sass.logError))
         .pipe($.postcss(plugins))
+        .pipe($.if(options.env === 'prod', $.purgecss(purge_options)))
+        .pipe($.if(options.env === 'prod', $.cssnano()))
         .pipe($.sourcemaps.write('.'))
         .pipe(gulp.dest(envOptions.style.path))
         .pipe(
@@ -58,14 +61,22 @@ function sass() {
 
 function tailwindcss() {
     const purge_options = {
-        content: ['./app/**/*.ejs', './app/**/*.html', './app/**/*.js'],
-        defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
+        content: ['./app/**/*.ejs', './app/**/*.html', './app/**/*.js', './app/**/*.css'],
+        // * 這個直接給我忽略 py-3\.5 | 參考 https://n1ghtmare.github.io/2020-05-14/setting-up-tailwindcss/
+        // defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
+        defaultExtractor: (content) => content.match(/[^<>"'`\s]*[^<>"'`\s:]/g) || [],
     }
     return gulp
         .src(envOptions.style.tailwindcss.src)
         .pipe($.postcss([require('tailwindcss'), autoprefixer()]))
-        .pipe($.if(options.env === 'prod', purgecss(purge_options)))
+        .pipe($.if(options.env === 'prod', $.purgecss(purge_options)))
+        // .pipe($.if(options.env === 'prod', $.cssnano()))
         .pipe(gulp.dest(envOptions.style.tailwindcss.path))
+        .pipe(
+            browserSync.reload({
+                stream: true,
+            })
+        )
 }
 
 function babel() {

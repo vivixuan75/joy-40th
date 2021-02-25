@@ -45,6 +45,7 @@
     },
     "devDependencies": {
         "autoprefixer": "^10.2.4",
+        "gulp-cssnano": "^2.1.3",
         "gulp-prettier": "^3.0.0",
         "gulp-purgecss": "^4.0.2",
         "postcss": "^8.2.6",
