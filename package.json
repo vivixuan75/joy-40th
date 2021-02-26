@@ -41,7 +41,8 @@
         "minimist": "^1.2.0",
         "morgan": "^1.9.1",
         "node-sass": "^4.14.1",
-        "onchange": "^7.1.0"
+        "onchange": "^7.1.0",
+        "postcss-import": "^14.0.0"
     },
     "devDependencies": {
         "autoprefixer": "^10.2.4",

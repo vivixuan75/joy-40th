@@ -32,6 +32,7 @@ let envOptions = {
         path: `${distPath}/assets/style`,
         tailwindcss: {
             src: [`${srcPath}/assets/style/index.css`],
+            watch: `${srcPath}/assets/style/**/*.css`,
             path: [`${distPath}/assets/style/`],
         },
     },

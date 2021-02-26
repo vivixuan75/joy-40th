@@ -1,57 +1,6 @@
-@tailwind base;
-@tailwind components;
+@import './tailwind_files/base.css';
+@import './tailwind_files/components/export.css';
 @tailwind utilities;
-
-@layer base {
-    @font-face {
-        font-family: GenSenRounded;
-        font-weight: normal;
-        src: local('GenSenRounded-JP-B'),
-            url(./../fonts/fontFamily/genSenRounded-B.woff2) format('woff2'),
-            url(./../fonts/fontFamily/genSenRounded-B.woff) format('woff'),
-            url(./../fonts/fontFamily/genSenRounded-B.ttf) format('ttf');
-    }
-    @font-face {
-        font-family: GenSenRounded;
-        font-weight: lighter;
-        src: local('GenSenRounded-JP-M'),
-            url(./../fonts/fontFamily/genSenRounded-M.woff2) format('woff2'),
-            url(./../fonts/fontFamily/genSenRounded-M.woff) format('woff'),
-            url(./../fonts/fontFamily/genSenRounded-M.ttf) format('ttf');
-    }
-    @font-face {
-        font-family: GenSenRounded;
-        font-weight: bold;
-        src: local('GenSenRounded-JP-H'),
-            url(./../fonts/fontFamily/genSenRounded-H.woff2) format('woff2'),
-            url(./../fonts/fontFamily/genSenRounded-H.woff) format('woff'),
-            url(./../fonts/fontFamily/genSenRounded-H.ttf) format('ttf');
-    }
-    html {
-        @apply font-genSenRounded font-normal;
-    }
-    h1 {
-        @apply text-4xl font-bold;
-    }
-    h2 {
-        @apply text-3xl font-bold;
-    }
-    h3 {
-        @apply text-2xl font-bold;
-    }
-    h4 {
-        @apply text-xl font-bold;
-    }
-    h5 {
-        @apply text-lg font-bold;
-    }
-    h6 {
-        @apply text-base font-bold;
-    }
-    a {
-        @apply inline-block;
-    }
-}
 
 @layer utilities {
     /* * Grid */
@@ -59,68 +8,35 @@
         @apply -mx-4 flex flex-wrap;
     }
     .row > .col {
-        @apply relative px-4;
+        @apply px-4;
     }
 
     .bg-joy {
-        background-image: url('./../images/bg_menu_01.png');
+        background-image: url('./../images/index/bg_menu_01.png');
     }
-}
-
-@layer components {
-    /* * default Nav background */
-    nav .logo img.logo-red {
-        @apply inline-block;
+    .bg-wall {
+        background-image: url('./../images/index/index_bg_texture.png');
     }
-    nav .logo img.logo-white {
-        @apply hidden;
+    .bg-icons {
+        background-image: url('./../images/index/index_01_cut3_icons.png');
     }
-    nav .nav-menubar {
-        @apply bg-primary text-white;
+    .bg-icons-red {
+        background-image: url('./../images/index/index_05_bg_icons.png');
     }
 
-    /* * joy Nav background */
-    .nav-joy {
-        @apply bg-joy;
+    .slide-up,
+    .slide-down {
+        @apply overflow-hidden;
     }
-    .nav-joy .logo img.logo-red {
-        @apply hidden;
+    .slide-up > *,
+    .slide-down > * {
+        @apply transform -translate-y-full transition-all;
     }
-    .nav-joy .logo img.logo-white {
-        @apply inline-block;
-    }
-    .nav-joy .nav-menubar {
-        @apply bg-white text-primary;
+    .slide-down > * {
+        @apply transform translate-y-0;
     }
 
-    /* * Nav link list */
-    .nav-btn {
-        @apply py-4 lg:py-1 px-4 w-full text-center rounded-3xl text-xl lg:text-base lg:hover:bg-white lg:hover:text-primary;
-    }
-    .nav-btn.active {
-        @apply lg:bg-white lg:text-primary lg:hover:bg-gray-50;
-    }
-
-    .nav-menu {
-        @apply hidden lg:flex items-center lg:pb-0 space-y-2 lg:space-y-0 lg:space-x-4 lg:w-auto w-full lg:flex-row flex-col;
-    }
-    .nav-menu__wrap {
-        @apply w-full lg:w-auto;
-    }
-    .nav-menu__wrap__list--col {
-        @apply flex text-white lg:flex-row flex-col lg:space-x-2 w-full divide-y lg:divide-y-0;
-    }
-    .nav-menu__wrap__list--row {
-        @apply flex pb-4 justify-around lg:space-x-2 text-white;
-    }
-
-    /* * Nav social link list */
-    button.btn-rounded,
-    a.btn-rounded {
-        @apply p-8 lg:p-4 rounded-full hover:bg-gray-100 bg-white inline-block relative;
-    }
-    button.btn-rounded img,
-    a.btn-rounded img {
-        @apply absolute inset-1/2 transform -translate-x-1/2 -translate-y-1/2;
+    .flex-col-center {
+        @apply flex flex-col items-center justify-center;
     }
 }

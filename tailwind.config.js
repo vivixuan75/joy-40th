@@ -9,6 +9,31 @@ module.exports = {
             padding: '1rem',   
         },
         extend: {
+            zIndex:{
+                '99': 99,
+            },
+            keyframes: {
+                fade: {
+                    '0%': { opacity: 0 },
+                    '100%': { opacity: 1 },
+                },
+                float: {
+                    '0%': { transform: `translate(0, 0px)` },
+                    '65%': { transform: `translate(0, 15px)` },
+                    '100%': { transform: `translate(0, -0px)` },
+                },
+                floatSm: {
+                    '0%': { transform: `translate(0, 0px)` },
+                    '45%': { transform: `translate(0, 5px)` },
+                    '100%': { transform: `translate(0, -0px)` },
+                }
+            },
+            animation: {
+                fadeIn: 'fade 0.5s ease-in both',
+                fadeOut: 'fade 0.5s ease-in reverse both',
+                float: 'float 3s ease-in-out infinite',
+                floatSm: 'floatSm 3s ease-in-out infinite',
+            },
             fontFamily:{
                 'genSenRounded': ['GenSenRounded', 'sans-serif']
             },

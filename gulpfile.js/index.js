@@ -4,6 +4,7 @@ const autoprefixer = require('autoprefixer')
 const minimist = require('minimist')
 const browserSync = require('browser-sync').create()
 const { envOptions } = require('./envOptions')
+const atImport = require("postcss-import")
 
 let options = minimist(process.argv.slice(2), envOptions)
 //現在開發狀態
@@ -60,6 +61,11 @@ function sass() {
 }
 
 function tailwindcss() {
+    const postcss_plugins = [
+        require('postcss-import'),
+        require('tailwindcss'), 
+        autoprefixer(),
+    ]
     const purge_options = {
         content: ['./app/**/*.ejs', './app/**/*.html', './app/**/*.js', './app/**/*.css'],
         // * 這個直接給我忽略 py-3\.5 | 參考 https://n1ghtmare.github.io/2020-05-14/setting-up-tailwindcss/
@@ -68,7 +74,7 @@ function tailwindcss() {
     }
     return gulp
         .src(envOptions.style.tailwindcss.src)
-        .pipe($.postcss([require('tailwindcss'), autoprefixer()]))
+        .pipe($.postcss(postcss_plugins))
         .pipe($.if(options.env === 'prod', $.purgecss(purge_options)))
         // .pipe($.if(options.env === 'prod', $.cssnano()))
         .pipe(gulp.dest(envOptions.style.tailwindcss.path))
@@ -142,7 +148,7 @@ function watch() {
     gulp.watch(envOptions.javascript.src, gulp.series(babel))
     gulp.watch(envOptions.img.src, gulp.series(copyFile))
     gulp.watch(envOptions.style.src, gulp.series(sass))
-    gulp.watch(envOptions.style.tailwindcss.src, gulp.series(tailwindcss))
+    gulp.watch(envOptions.style.tailwindcss.watch, gulp.series(tailwindcss))
 }
 
 exports.deploy = deploy

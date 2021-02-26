@@ -1,0 +1,14 @@
+@tailwind components;
+@layer components {
+    .header {
+        @apply overflow-hidden max-h-screen;
+        /* max-height: 90vh */
+    }
+    .header__elementsCuts {
+        @apply relative max-h-screen bg-wall;
+        /* max-height: 90vh */
+    }
+    .cut {
+        @apply opacity-0 hidden;
+    }
+}

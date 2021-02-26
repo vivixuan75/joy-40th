@@ -1,0 +1,75 @@
+@tailwind components;
+@layer components {
+    .nav {
+        @apply py-3.5 fixed w-full z-40;
+    }
+    /* * default Nav background */
+    nav .logo img.logo-red {
+        @apply inline-block;
+    }
+    nav .logo img.logo-white {
+        @apply hidden;
+    }
+    nav .nav-menubar {
+        @apply bg-primary text-white;
+    }
+
+    /* * joy Nav background */
+    .nav-joy {
+        @apply bg-joy;
+    }
+    .nav-joy .logo img.logo-red {
+        @apply hidden;
+    }
+    .nav-joy .logo img.logo-white {
+        @apply inline-block;
+    }
+    .nav-joy .nav-menubar {
+        @apply bg-white text-primary;
+    }
+
+    /* * Nav Slide Animation */
+    .navWrap .nav__stuffing {
+        @apply transition-all duration-500;
+        height: 79.81px;
+    }
+    .navWrap.hide .nav__stuffing {
+        height: 0;
+    }
+    .navWrap .nav {
+        @apply transform translate-y-0 transition-all duration-500;
+    }
+    .navWrap.hide .nav {
+        @apply -translate-y-full;
+    }
+
+    /* * Nav link list */
+    .nav-btn {
+        @apply py-4 lg:py-1 px-4 w-full text-center rounded-3xl text-xl lg:text-base lg:hover:bg-white lg:hover:text-primary;
+    }
+    .nav-btn.active {
+        @apply lg:bg-white lg:text-primary lg:hover:bg-gray-50;
+    }
+
+    .nav-menu {
+        @apply hidden lg:flex items-center lg:pb-0 space-y-2 lg:space-y-0 lg:space-x-4 lg:w-auto w-full lg:flex-row flex-col;
+    }
+    .nav-menu__wrap {
+        @apply w-full lg:w-auto;
+    }
+    .nav-menu__wrap__list--col {
+        @apply flex text-white lg:flex-row flex-col lg:space-x-2 w-full divide-y lg:divide-y-0;
+    }
+    .nav-menu__wrap__list--row {
+        @apply flex pb-4 lg:pb-0 justify-around lg:space-x-2 text-white;
+    }
+    /* * Nav social link list */
+    button.btn-rounded,
+    a.btn-rounded {
+        @apply p-8 lg:p-4 rounded-full hover:bg-gray-100 bg-white inline-block relative;
+    }
+    button.btn-rounded img,
+    a.btn-rounded img {
+        @apply absolute inset-1/2 transform -translate-x-1/2 -translate-y-1/2;
+    }
+}
