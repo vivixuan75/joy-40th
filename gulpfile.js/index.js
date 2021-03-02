@@ -4,7 +4,8 @@ const autoprefixer = require('autoprefixer')
 const minimist = require('minimist')
 const browserSync = require('browser-sync').create()
 const { envOptions } = require('./envOptions')
-const atImport = require("postcss-import")
+const webpack = require('webpack-stream');
+// const TerserPlugin = require("terser-webpack-plugin");
 
 let options = minimist(process.argv.slice(2), envOptions)
 //現在開發狀態
@@ -49,8 +50,8 @@ function sass() {
         .pipe($.sourcemaps.init())
         .pipe($.sass().on('error', $.sass.logError))
         .pipe($.postcss(plugins))
-        .pipe($.if(options.env === 'prod', $.purgecss(purge_options)))
-        .pipe($.if(options.env === 'prod', $.cssnano()))
+        .pipe($.if(options.env === 'production', $.purgecss(purge_options)))
+        .pipe($.if(options.env === 'production', $.cssnano()))
         .pipe($.sourcemaps.write('.'))
         .pipe(gulp.dest(envOptions.style.path))
         .pipe(
@@ -75,8 +76,8 @@ function tailwindcss() {
     return gulp
         .src(envOptions.style.tailwindcss.src)
         .pipe($.postcss(postcss_plugins))
-        .pipe($.if(options.env === 'prod', $.purgecss(purge_options)))
-        // .pipe($.if(options.env === 'prod', $.cssnano()))
+        .pipe($.if(options.env === 'production', $.purgecss(purge_options)))
+        // .pipe($.if(options.env === 'production', $.cssnano()))
         .pipe(gulp.dest(envOptions.style.tailwindcss.path))
         .pipe(
             browserSync.reload({
@@ -85,17 +86,60 @@ function tailwindcss() {
         )
 }
 
+// function babel() {
+//     return gulp
+//         .src(envOptions.javascript.entry)
+//         .pipe($.sourcemaps.init())
+//         .pipe(
+//             $.babel({
+//                 presets: ['@babel/env'],
+//             })
+//         )
+//         // .pipe($.concat(envOptions.javascript.concat))
+//         .pipe($.sourcemaps.write('.'))
+//         .pipe(gulp.dest(envOptions.javascript.path))
+//         .pipe(
+//             browserSync.reload({
+//                 stream: true,
+//             })
+//         )
+// }
 function babel() {
+    const webpack_config_prod = {
+        mode: 'production',
+        // TODO minify
+        // optimization: {
+        //     minimize: true,
+        //     minimizer: [new TerserPlugin({
+        //         test: /\.js(\?.*)?$/i,
+        //       })]
+        // },
+        entry:{
+            all: envOptions.javascript.entry,
+        },
+        output: {
+            filename: '[name].js'
+        }
+    }
+    const webpack_config_dev = {
+        mode: 'development',
+        entry:{
+            all: envOptions.javascript.entry,
+        },
+        output: {
+            filename: '[name].js'
+        }
+    }
     return gulp
-        .src(envOptions.javascript.src)
-        .pipe($.sourcemaps.init())
+        .src(envOptions.javascript.entry)
+        .pipe($.if(options.env === 'development', $.sourcemaps.init()))
+        .pipe($.if(options.env === 'development', webpack(webpack_config_dev), webpack(webpack_config_prod)))
         .pipe(
             $.babel({
                 presets: ['@babel/env'],
             })
         )
-        .pipe($.concat(envOptions.javascript.concat))
-        .pipe($.sourcemaps.write('.'))
+        .pipe($.if(options.env === 'development', $.sourcemaps.write('.')))
         .pipe(gulp.dest(envOptions.javascript.path))
         .pipe(
             browserSync.reload({

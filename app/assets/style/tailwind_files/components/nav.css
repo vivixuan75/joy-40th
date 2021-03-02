@@ -40,7 +40,7 @@
         @apply transform translate-y-0 transition-all duration-500;
     }
     .navWrap.hide .nav {
-        @apply -translate-y-full;
+        @apply -translate-y-101;
     }
 
     /* * Nav link list */

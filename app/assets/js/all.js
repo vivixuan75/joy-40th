@@ -1,5 +1,9 @@
+import { header_animate } from './landingAnimation'
+
 window.onload = function () {
     menubar()
+    // * skip => 是否跳過前面的動畫
+    header_animate({ skip: false })
 }
 
 function menubar() {
@@ -10,6 +14,7 @@ function menubar() {
 }
 
 function toggleMenu() {
+    console.log('clicked')
     const el_menu = document.querySelector('[data-menu]')
     if (el_menu) {
         el_menu.classList.toggle('flex')

@@ -1,62 +1,64 @@
 <header class="header">
     <div class="bg-black">
-        <div class="container">
-            <div id="cut1">
-                <video id="video-desktop" muted class="hidden md:block w-full" src="assets/images/index/01/index.mp4"></video>
-                <video id="video-mobile" muted class="md:hidden w-full" src="assets/images/index/01/index_m.mp4"></video>
+        <div class="container px-0">
+            <div id="cut1" class="max-h-screenLimit h-screen flex-col-center">
+                <video id="video-desktop" muted webkit-playsinline playsinline class="hidden md:block w-full" src="assets/images/index/01/index.mp4"></video>
+                <video id="video-mobile" muted webkit-playsinline playsinline class="md:hidden w-full" src="assets/images/index/01/index_m.mp4"></video>
             </div>
         </div>
     </div>
     <div class="header__elementsCuts">
         <div class="container">
-            <div id="cut2" class="opacity-0 h-screen">
-                <div class="container">
-                    <div class="row">
-                        <div class="col w-full flex-col-center">
-                            <div class="py-14 text-center text-primary">
-                                <h2 id="cut2_text" class="font-normal">.</h2>
-                            </div>
-                            <div class="text-center relative">
-                                <img id="cut2_img" style="max-width:550px; filter:blur(10px)" src="assets/images/index/01/index_01_cut2_man-2.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="cut3" class="opacity-0 h-screen">
-                <div class="container">
-                    <div class="row">
-                        <div class="col w-full flex-col-center">
-                            <div class="relative z-10 py-14 text-center text-primary tracking-widest">
-                                <h2 class="font-normal text-4xl mb-1">
-                                    一定要找回作夢的勇氣
-                                </h2>
-                                <h3 class="font-normal">
-                                    # 勇敢作夢 我挺你
-                                </h3>
-                            </div>
-                            <div class="relative z-10 text-center">
-                                <div class="absolute z-0 inset-y-0 left-1/2 transform translate-x-1/4 md:translate-x-1/2 -translate-y-10 text-center text-primary">
-                                    <div class="relative animate-float">
-                                        <h4 class="absolute z-0 inset-0 m-auto pt-8 text-2xl font-normal">
-                                            我想要
-                                            <br>
-                                            坐上太空船!
-                                        </h4>
-                                        <img src="assets/images/index/01/index_01_cut3_bubble.png" alt="">
-                                    </div>
+            <div class="row justify-center max-h-screenLimit h-screen">
+                <div id="cut2" class="opacity-0 hidden">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col w-full max-h-screenLimit h-screen flex flex-col justify-between">
+                                <div class="py-14 text-center text-primary flex-col-center flex-grow">
+                                    <h2 id="cut2_text" class="font-normal">.</h2>
                                 </div>
-                                <img style="max-width:400px" src="assets/images/index/01/index_01_cut3_boy.png" alt="">
-                            </div>
-                            <div class="absolute z-0 inset-y-0 left-1/2 transform -translate-x-1/2">
-                                <img class="h-full max-w-none animate-floatSm" src="./assets/images/index/index_01_cut3_icons.png" alt="">
+                                <div class="text-center relative">
+                                    <img id="cut2_img" class="inline-block max-w-sm md:max-w-lg w-full" style="filter:blur(10px)" src="assets/images/index/01/index_01_cut2_man-2.png" alt="">
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div id="cut4" class="opacity-0 ">
-                <img id="cut4_arrow" class="absolute z-30 inset-x-0 bottom-0 mx-auto w-8 mb-4 animate-bounce" src="assets/images/index/01/icon_arrowDown.svg" alt="">
+                <div id="cut3" class="opacity-0 hidden">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col w-full max-h-screenLimit h-screen flex flex-col justify-between">
+                                <div class="relative z-10 py-14 flex-col-center flex-grow text-center text-primary tracking-widest">
+                                    <h2 class="font-normal text-2xl md:text-5xl lg:text-4xl mb-1">
+                                        一定要找回作夢的勇氣
+                                    </h2>
+                                    <h3 class="font-normal">
+                                        # 勇敢作夢 我挺你
+                                    </h3>
+                                </div>
+                                <div class="relative z-10 text-center">
+                                    <div class="absolute z-0 inset-y-0 left-1/2 transform translate-x-1/7 md:translate-x-1/2 -translate-y-10 text-center text-primary">
+                                        <div class="relative animate-float">
+                                            <h4 class="absolute z-0 inset-0 flex-col-center transform -translate-y-5 text-xl md:text-2xl font-normal">
+                                                我想要
+                                                <br>
+                                                坐上太空船!
+                                            </h4>
+                                            <img src="assets/images/index/01/index_01_cut3_bubble.png" alt="">
+                                        </div>
+                                    </div>
+                                    <img class="inline-block max-w-xxs md:max-w-lg w-full" src="assets/images/index/01/index_01_cut3_boy.png" alt="">
+                                </div>
+                                <div class="absolute z-0 inset-y-0 left-1/2 transform -translate-x-1/2">
+                                    <img class="h-full max-w-none animate-floatSm" src="./assets/images/index/index_01_cut3_icons.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="cut4" class="opacity-0 hidden">
+                    <img id="cut4_arrow" class="absolute z-30 right-0 md:inset-x-0 bottom-0 mx-4 md:mx-auto w-8 mb-4 animate-bounce" src="assets/images/index/01/icon_arrowDown.svg" alt="">
+                </div>
             </div>
         </div>
     </div>

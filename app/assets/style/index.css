@@ -30,7 +30,7 @@
     }
     .slide-up > *,
     .slide-down > * {
-        @apply transform -translate-y-full transition-all;
+        @apply transform -translate-y-101 transition-all;
     }
     .slide-down > * {
         @apply transform translate-y-0;

@@ -5,8 +5,8 @@
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "build": "gulp build --env dev",
-        "prod": "gulp build --env prod",
+        "build": "gulp build --env development",
+        "prod": "gulp build --env production",
         "watch": "gulp",
         "start": "node serve.js",
         "prettier-watch": "onchange \"./app/**/*\" -- prettier --config .prettierrc.js -w './**/*' -u {{changed}}"
@@ -24,6 +24,7 @@
         "browser-sync": "^2.26.14",
         "ejs": "^3.1.6",
         "express": "^4.17.1",
+        "gsap": "^3.6.0",
         "gulp": "^4.0.2",
         "gulp-babel": "^8.0.0",
         "gulp-clean": "^0.4.0",
@@ -50,6 +51,8 @@
         "gulp-prettier": "^3.0.0",
         "gulp-purgecss": "^4.0.2",
         "postcss": "^8.2.6",
-        "tailwindcss": "^2.0.3"
+        "tailwindcss": "^2.0.3",
+        "terser-webpack-plugin": "^5.1.1",
+        "webpack-stream": "^6.1.2"
     }
 }

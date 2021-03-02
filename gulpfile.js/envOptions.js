@@ -37,6 +37,7 @@ let envOptions = {
         },
     },
     javascript: {
+        entry: [`${srcPath}/assets/js/all.js`],
         src: [`${srcPath}/assets/js/**/*.js`],
         concat: 'all.js',
         path: `${distPath}/assets/js`,
