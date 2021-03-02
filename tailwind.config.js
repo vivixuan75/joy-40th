@@ -38,7 +38,7 @@ module.exports = {
                 'genSenRounded': ['GenSenRounded', 'sans-serif']
             },
             colors: {
-                primary: '#de051b',
+                primary: '#e60012',
             },
             translate: {
                 '-101': '-101%',

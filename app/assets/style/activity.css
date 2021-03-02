@@ -1,0 +1,8 @@
+/* 活動辦法 */
+.activity-method .title {
+    @apply flex flex-wrap justify-center;
+}
+
+.activity-method h1 {
+    @apply text-primary w-full text-center font-medium;
+}
