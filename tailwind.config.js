@@ -6,11 +6,19 @@ module.exports = {
     theme: {
         container: {
             center: true,
-            padding: '1rem',   
+            padding: '1rem',
+        },
+        screens: {
+            xs: '480px',
+            sm: '640px',
+            md: '768px',
+            lg: '1024px',
+            xl: '1280px',
+            '2xl': '1536px',
         },
         extend: {
-            zIndex:{
-                '99': 99,
+            zIndex: {
+                99: 99,
             },
             keyframes: {
                 fade: {
@@ -26,16 +34,22 @@ module.exports = {
                     '0%': { transform: `translate(0, 0px)` },
                     '45%': { transform: `translate(0, 5px)` },
                     '100%': { transform: `translate(0, -0px)` },
-                }
+                },
+                pulseScale: {
+                    '0%': { transform: 'scaleX(1)' },
+                    '50%': { transform: 'scale3d(1.05,1.05,1.05)' },
+                    '100%': { transform: 'scaleX(1)' },
+                },
             },
             animation: {
                 fadeIn: 'fade 0.5s ease-in both',
                 fadeOut: 'fade 0.5s ease-in reverse both',
                 float: 'float 3s ease-in-out infinite',
                 floatSm: 'floatSm 3s ease-in-out infinite',
+                pulseScale: 'pulseScale .5 ease-in-out',
             },
-            fontFamily:{
-                'genSenRounded': ['GenSenRounded', 'sans-serif']
+            fontFamily: {
+                genSenRounded: ['GenSenRounded', 'sans-serif'],
             },
             colors: {
                 primary: '#de051b',
@@ -56,15 +70,17 @@ module.exports = {
                 '6/7': '85.7142857%',
             },
             maxWidth: {
-                'xxs': '18rem'
+                xxs: '18rem',
             },
             maxHeight: {
-                'screenLimit': 768
-            }
+                screenLimit: 768,
+            },
         },
     },
     variants: {
-        extend: {},
+        extend: {
+            animation: ['hover'],
+        },
     },
     plugins: [],
 }

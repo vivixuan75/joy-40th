@@ -1,0 +1,40 @@
+@tailwind components;
+@layer components {
+    .album-section {
+        @apply bg-wall;
+    }
+    .albumCard {
+        @apply bg-joy px-2 pt-4 pb-8 w-full md:max-w-md;
+    }
+    .albumCard .content {
+        @apply relative;
+    }
+    .albumCard .content__textWrap {
+        @apply relative transform text-3xl;
+    }
+    .albumCard .content__textWrap.card-textTop {
+        @apply translate-y-6 right-8 text-right;
+    }
+    .albumCard .content__textWrap.card-textBottom {
+        @apply -translate-y-6 left-8;
+    }
+    .albumCard .content__text {
+        @apply inline-block pt-2 pb-1 bg-white text-primary;
+    }
+    /* swiper */
+    .album-section .swiper-slide {
+        @apply transition-all duration-300;
+    }
+    .album-section .swiper-slide {
+        @apply opacity-60 md:opacity-100;
+    }
+    .album-section .swiper-slide-active {
+        opacity: 1;
+    }
+    .album-section .swiper-pagination-bullet {
+        @apply bg-primary w-2 transition-all duration-300;
+    }
+    .album-section .swiper-pagination-bullet-active {
+        @apply rounded-lg w-8;
+    }
+}

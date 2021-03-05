@@ -5,10 +5,329 @@ engine: ejs
 current: index
 ---
 
-<div class="container">
-    <div class="row">
-        <div class="col w-6/12 mb-3"><div class="bg-blue-500">col</div></div>
-        <div class="col w-6/12 mb-3"><div class="bg-blue-500">col</div></div>
-        <div class="col w-6/12 mb-3"><div class="bg-blue-500">col</div></div>
+<section id="section-studio" class="studio-section">
+    <div class="studio__innerWrap">
+        <div class="container relative">
+            <!-- 背景圖 -->
+            <div class="absolute z-10 inset-x-0 w-full max-w-screen-lg mx-auto top-0">
+                <!-- 燈 -->
+                <img src="assets/images/index/02/index_02_bg_light.png" alt="" />
+            </div>
+            <!-- 背景圖 -->
+            <div class="absolute z-20 inset-x-0 w-full max-w-screen-lg mx-auto bottom-0">
+                <div class="flex items-end">
+                    <!-- 小孩 -->
+                    <div class="studio__bg-child-Wrap">
+                        <img src="assets/images/index/02/index_02_boy.png" alt="" />
+                    </div>
+                    <!-- 大人 -->
+                    <div class="studio__bg-man-Wrap">
+                        <img src="assets/images/index/02/index_02_man.png" alt="" />
+                    </div>
+                </div>
+            </div>
+            <div class="studio__textWrap">
+                <div class="col w-full mb-8">
+                    <h2 class="studio__textWrap__title text-center text-primary">立即進入攝影棚</h2>
+                </div>
+                <div class="col w-full mb-10">
+                    <div class="row justify-center">
+                        <div class="col w-1/2 md:w-2/6 lg:w-1/4">
+                            <a
+                                class="studio__textWrap__btn relative"
+                                href="https://www.facebook.com/fbcameraeffects/tryit/916453849106989/"
+                                target="_blank"
+                            >
+                                <div class="absolute z-0 inset-0 w-h-full">
+                                    <img
+                                        class="w-h-full"
+                                        src="assets/images/index/02/index_02_btnBg.jpg"
+                                        alt=""
+                                    />
+                                </div>
+                                <div class="relative z-10">
+                                    <div class="studio__textWrap__btn__icon">
+                                        <img
+                                            class="inline-block"
+                                            src="assets/images/index/02/index_02_btn_fb.png"
+                                            alt=""
+                                        />
+                                    </div>
+                                    <span class="text-md md:text-2xl">Facebook 相機</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col w-1/2 md:w-2/6 lg:w-1/4">
+                            <a
+                                class="studio__textWrap__btn relative"
+                                href="https://www.instagram.com/ar/253215886393102/"
+                                target="_blank"
+                            >
+                                <div class="absolute z-0 inset-0 w-h-full">
+                                    <img
+                                        class="w-h-full"
+                                        src="assets/images/index/02/index_02_btnBg.jpg"
+                                        alt=""
+                                    />
+                                </div>
+                                <div class="relative z-10">
+                                    <div class="studio__textWrap__btn__icon">
+                                        <img
+                                            class="inline-block"
+                                            src="assets/images/index/02/index_02_btn_ig.png"
+                                            alt=""
+                                        />
+                                    </div>
+                                    <span class="text-md md:text-2xl">Instagram 相機</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col w-full mb-20 relative">
+                    <h3 class="mb-4 studio__textWrap__text-sm text-center">
+                        <span class="relative z-0">
+                            圓夢金
+                            <span class="studio__textWrap__text-lg text-primary">
+                                <!-- 因為換行會造成多餘的空格，所以這邊就長的醜醜的 -->
+                                <span class="studio__textWrap__text-sm">$</span>48<span
+                                    class="studio__textWrap__text-sm"
+                                    >,</span
+                                >000
+                            </span>
+                            等你拿
+                            <div class="absolute z-0 -left-20 -top-10 opacity-40">
+                                <img
+                                    src="assets/images/index/02/index_02_icon_light_left.png"
+                                    alt=""
+                                />
+                            </div>
+                            <div class="absolute z-0 -right-20 -top-10 opacity-40">
+                                <img
+                                    src="assets/images/index/02/index_02_icon_light_right.png"
+                                    alt=""
+                                />
+                            </div>
+                            <div
+                                class="absolute z-0 left-10 sm:left-0 md:-left-12 lg:left-0 -bottom-32 lg:-bottom-36 w-28 md:w-40"
+                            >
+                                <img
+                                    class="w-full"
+                                    src="assets/images/index/02/index_02_icon_rocket.png"
+                                    alt=""
+                                />
+                            </div>
+                        </span>
+                    </h3>
+                    <div class="text-center text-xl md:text-2xl">
+                        <span class="cursor-pointer border-b border-black">活動辦法</span>
+                    </div>
+                    <div
+                        class="absolute -bottom-20 left-1/2 transform translate-y-full -translate-x-1/2 block md:hidden"
+                    >
+                        <img src="assets/images/index/02/index_02_icon_others.png" alt="" />
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
+</section>
+
+<section id="section-album" class="album-section">
+    <div class="container">
+        <div class="row py-16">
+            <div class="col w-full mb-12">
+                <div class="text-center text-primary">
+                    <span class="inline-block mb-4">
+                        <img
+                            class="inline-block relative left-3"
+                            src="assets/images/index/index_03_icon_camera.png"
+                            alt=""
+                        />
+                    </span>
+                    <h2 class="text-3xl md:text-4xl mb-2">時光相冊</h2>
+                    <p class="text-xl xs:text-2xl md:text-3xl">
+                        長大後的懊惱，如果小時候能懂就好～
+                    </p>
+                </div>
+            </div>
+            <div class="col w-full mb-3">
+                <div class="swiper-container mb-8">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide albumCard">
+                            <div class="content">
+                                <h3 class="content__textWrap card-textTop">
+                                    <span class="content__text">陳世凱</span>
+                                </h3>
+                                <div class="w-full bg-blue-900 text-white" style="height: 300px">
+                                    圖片
+                                </div>
+                                <!-- <img class="w-full" src="https://i.pravatar.cc/400" alt="" /> -->
+                                <div
+                                    class="content__textWrap card-textBottom space-y-2 inline-flex flex-col"
+                                >
+                                    <p>
+                                        <span class="content__text">脫單很難</span>
+                                    </p>
+                                    <p>
+                                        <span class="content__text">背單字更難</span>
+                                    </p>
+                                </div>
+                                <h6 class="font-normal text-center text-white mt-4">
+                                    勇敢作夢 我挺你
+                                </h6>
+                            </div>
+                        </div>
+                        <div class="swiper-slide albumCard">
+                            <div class="content">
+                                <h3 class="content__textWrap card-textTop">
+                                    <span class="content__text">陳世凱</span>
+                                </h3>
+                                <div class="w-full bg-blue-900 text-white" style="height: 300px">
+                                    圖片
+                                </div>
+                                <!-- <img class="w-full" src="https://i.pravatar.cc/400" alt="" /> -->
+                                <div
+                                    class="content__textWrap card-textBottom space-y-2 inline-flex flex-col"
+                                >
+                                    <p>
+                                        <span class="content__text">脫單很難</span>
+                                    </p>
+                                    <p>
+                                        <span class="content__text">背單字更難</span>
+                                    </p>
+                                </div>
+                                <h6 class="font-normal text-center text-white mt-4">
+                                    勇敢作夢 我挺你
+                                </h6>
+                            </div>
+                        </div>
+                        <div class="swiper-slide albumCard">
+                            <div class="content">
+                                <h3 class="content__textWrap card-textTop">
+                                    <span class="content__text">陳世凱</span>
+                                </h3>
+                                <div class="w-full bg-blue-900 text-white" style="height: 300px">
+                                    圖片
+                                </div>
+                                <!-- <img class="w-full" src="https://i.pravatar.cc/400" alt="" /> -->
+                                <div
+                                    class="content__textWrap card-textBottom space-y-2 inline-flex flex-col"
+                                >
+                                    <p>
+                                        <span class="content__text">脫單很難</span>
+                                    </p>
+                                    <p>
+                                        <span class="content__text">背單字更難</span>
+                                    </p>
+                                </div>
+                                <h6 class="font-normal text-center text-white mt-4">
+                                    勇敢作夢 我挺你
+                                </h6>
+                            </div>
+                        </div>
+                        <div class="swiper-slide albumCard">
+                            <div class="content">
+                                <h3 class="content__textWrap card-textTop">
+                                    <span class="content__text">陳世凱</span>
+                                </h3>
+                                <div class="w-full bg-blue-900 text-white" style="height: 300px">
+                                    圖片
+                                </div>
+                                <!-- <img class="w-full" src="https://i.pravatar.cc/400" alt="" /> -->
+                                <div
+                                    class="content__textWrap card-textBottom space-y-2 inline-flex flex-col"
+                                >
+                                    <p>
+                                        <span class="content__text">脫單很難</span>
+                                    </p>
+                                    <p>
+                                        <span class="content__text">背單字更難</span>
+                                    </p>
+                                </div>
+                                <h6 class="font-normal text-center text-white mt-4">
+                                    勇敢作夢 我挺你
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-center">
+                    <div class="swiper-pagination space-x-2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="section-videos" class="videos-section">
+    <div class="container">
+        <div class="row py-16">
+            <div class="col w-full mb-12">
+                <div class="text-center text-white">
+                    <span class="inline-block mb-4">
+                        <img
+                            class="inline-block relative left-2"
+                            src="assets/images/index/index_04_icon_camera.png"
+                            alt=""
+                        />
+                    </span>
+                    <h2 class="text-3xl md:text-4xl mb-2 relative">
+                        放映室
+                        <img
+                            class="absolute z-0 left-1/2 -bottom-4 transform -translate-x-1/2 max-w-none"
+                            style="width: 1300px"
+                            src="assets/images/index/index_04_bg_title.png"
+                            alt=""
+                        />
+                    </h2>
+                    <p class="text-xl xs:text-2xl md:text-3xl">那天…我遇見小時候的自己</p>
+                </div>
+            </div>
+            <div class="col w-full">
+                <div class="row space-y-10 md:space-y-0">
+                    <div class="col w-full md:w-1/2">
+                        <div class="videoCard">
+                            <div class="video-container">
+                                <iframe
+                                    width="1349"
+                                    height="480"
+                                    src="https://www.youtube.com/embed/XCk5DrE1HVk"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen
+                                ></iframe>
+                            </div>
+                            <h3 class="videoCard__content">
+                                <span class="videoCard__content-head"
+                                    >「差一點」就到紐約發表作品…</span
+                                >
+                                <span class="videoCard__content-sub">#勇敢做夢 我挺你</span>
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="col w-full md:w-1/2">
+                        <div class="videoCard">
+                            <div class="video-container">
+                                <iframe
+                                    width="1349"
+                                    height="480"
+                                    src="https://www.youtube.com/embed/XCk5DrE1HVk"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen
+                                ></iframe>
+                            </div>
+                            <h3 class="videoCard__content">
+                                <span class="videoCard__content-head"
+                                    >「差一點」就到紐約發表作品…</span
+                                >
+                                <span class="videoCard__content-sub">#勇敢做夢 我挺你</span>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

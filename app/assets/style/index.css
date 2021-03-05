@@ -12,6 +12,9 @@
     }
 
     .bg-joy {
+        background-image: url('./../images/index/index_04_bg.png');
+    }
+    .bg-joyWide {
         background-image: url('./../images/index/bg_menu_01.png');
     }
     .bg-wall {
@@ -36,7 +39,23 @@
         @apply transform translate-y-0;
     }
 
+    .flex-row-center {
+        @apply flex flex-row items-center justify-center;
+    }
     .flex-col-center {
         @apply flex flex-col items-center justify-center;
+    }
+
+    .w-h-full {
+        @apply w-full h-full;
+    }
+
+    .video-container {
+        @apply relative h-0 overflow-hidden;
+        padding-bottom: 56.25%;
+        padding-top: 30px;
+    }
+    .video-container iframe {
+        @apply absolute top-0 left-0 w-h-full;
     }
 }

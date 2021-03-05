@@ -1,0 +1,52 @@
+@tailwind components;
+@layer components {
+    .studio-section {
+        @apply bg-cover;
+        background-image: url('./../images/index/02/index_02_bg_underLayer.png');
+    }
+    .studio__innerWrap {
+        @apply overflow-hidden;
+        background: linear-gradient(rgba(50, 50, 50, 0.4), rgba(255, 255, 255, 0));
+    }
+    .studio__bg-child-Wrap {
+        @apply h-full flex items-end justify-start;
+    }
+    .studio__bg-man-Wrap {
+        @apply h-full flex items-end justify-end;
+    }
+    .studio__bg-child-Wrap img,
+    .studio__bg-man-Wrap img {
+        @apply relative w-full md:w-9/12;
+    }
+    .studio__bg-man-Wrap img {
+        @apply md:-right-10 lg:-right-32;
+    }
+    .studio__bg-child-Wrap img {
+        @apply md:-left-10 lg:-left-20;
+    }
+    .studio__textWrap {
+        @apply row relative z-30 pt-24 xs:pt-28 sm:pt-36 md:pt-40 lg:pt-52 pb-40 xs:pb-64 sm:pb-80 md:pb-10;
+    }
+    .studio__textWrap__title {
+        @apply text-3xl sm:text-4xl;
+    }
+    .studio__textWrap__btn {
+        @apply inline-block sm:px-2 md:px-4 py-4 md:py-8 w-full text-center text-white transition transform hover:translate-y-1;
+        border-right: 4px solid #9c2e2f;
+        border-bottom: 4px solid #9c2e2f;
+    }
+    .studio__textWrap__btn:hover,
+    .studio__textWrap__btn:active {
+        border-right: 4px solid transparent;
+        border-bottom: 4px solid transparent;
+    }
+    .studio__textWrap__btn__icon {
+        @apply block mb-3 px-8 md:px-4 lg:px-0 text-center;
+    }
+    .studio__textWrap__text-sm {
+        @apply text-xl xs:text-2xl sm:text-3xl lg:text-4xl;
+    }
+    .studio__textWrap__text-lg {
+        @apply text-4xl sm:text-5xl lg:text-6xl;
+    }
+}

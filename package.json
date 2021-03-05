@@ -9,7 +9,7 @@
         "prod": "gulp build --env production",
         "watch": "gulp",
         "start": "node serve.js",
-        "prettier-watch": "onchange \"./app/**/*\" -- prettier --config .prettierrc.js -w './**/*' -u {{changed}}"
+        "prettier-watch": "-- prettier --config .prettierrc.js -w './**/*' -u"
     },
     "engines": {
         "node": "11.7.0"
@@ -43,7 +43,8 @@
         "morgan": "^1.9.1",
         "node-sass": "^4.14.1",
         "onchange": "^7.1.0",
-        "postcss-import": "^14.0.0"
+        "postcss-import": "^14.0.0",
+        "swiper": "^6.4.15"
     },
     "devDependencies": {
         "autoprefixer": "^10.2.4",

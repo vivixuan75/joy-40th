@@ -12,8 +12,7 @@ let envOptions = {
         src: [
             `${srcPath}/**/*`,
             `!${srcPath}/assets/js/**/*.js`,
-            `!${srcPath}/assets/style/**/*.scss`,
-            `!${srcPath}/assets/style/**/*.sass`,
+            `!${srcPath}/assets/style/**/*`,
             `!${srcPath}/**/*.ejs`,
             `!${srcPath}/**/*.html`,
         ],
@@ -25,10 +24,7 @@ let envOptions = {
         path: distPath,
     },
     style: {
-        src: [
-            `${srcPath}/assets/style/**/*.scss`,
-            `${srcPath}/assets/style/**/*.sass`,
-        ],
+        src: [`${srcPath}/assets/style/**/*.scss`, `${srcPath}/assets/style/**/*.sass`],
         path: `${distPath}/assets/style`,
         tailwindcss: {
             src: [`${srcPath}/assets/style/index.css`],
@@ -61,7 +57,7 @@ let envOptions = {
             `${srcPath}/**/*.scss`,
             `${srcPath}/**/*.js`,
         ],
-        dest: `${srcPath}`
+        dest: `${srcPath}`,
     },
     browserDir: distPath,
     deploySrc: `${distPath}/**/*`,
