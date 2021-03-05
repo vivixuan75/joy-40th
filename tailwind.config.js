@@ -6,6 +6,7 @@ module.exports = {
     theme: {
         container: {
             center: true,
+<<<<<<< HEAD
             padding: '1rem',
         },
         screens: {
@@ -19,6 +20,25 @@ module.exports = {
         extend: {
             zIndex: {
                 99: 99,
+=======
+            padding: '1rem',   
+        }, 
+        screens: {
+        'xxs': '375px',
+        'xs': '480px',
+        'sm': '640px',    
+        'md': '768px',    
+        'lg': '1024px',    
+        'xl': '1280px',    
+        '2xl': '1536px',
+        },    
+        extend: {
+            zIndex:{
+                '99': 99,
+                '-10': '-10',
+                '-20': '-20',
+                '-99': '-99',
+>>>>>>> 4ea82660a54d02d4380115a1a761f59a11ff62a9
             },
             keyframes: {
                 fade: {
@@ -48,11 +68,17 @@ module.exports = {
                 floatSm: 'floatSm 3s ease-in-out infinite',
                 pulseScale: 'pulseScale .5 ease-in-out',
             },
+<<<<<<< HEAD
             fontFamily: {
                 genSenRounded: ['GenSenRounded', 'sans-serif'],
+=======
+            fontFamily:{
+                'genSenRounded': ['GenSenRounded', 'sans-serif'],
+                'awesome':['Font Awesome 5 Free'],
+>>>>>>> 4ea82660a54d02d4380115a1a761f59a11ff62a9
             },
             colors: {
-                primary: '#de051b',
+                primary: '#e60012',
             },
             translate: {
                 '-101': '-101%',
@@ -73,8 +99,30 @@ module.exports = {
                 xxs: '18rem',
             },
             maxHeight: {
+<<<<<<< HEAD
                 screenLimit: 768,
             },
+=======
+                'screenLimit': 768
+            },
+            borderWidth: {
+            DEFAULT: '1px',
+                '0': '0',
+                '2': '2px',
+                '3': '3px',
+                '4': '4px',
+                '5': '5px',
+                '6': '6px',
+                '7': '7px',
+                '8': '8px',
+                '9': '9px',
+            },
+            maxWidth:{
+                '1/4': '25%',
+                '1/2': '50%',
+                '3/4': '75%',
+            }
+>>>>>>> 4ea82660a54d02d4380115a1a761f59a11ff62a9
         },
     },
     variants: {

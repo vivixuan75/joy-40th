@@ -171,11 +171,26 @@ function throttle(func, timeout = 250) {
     }
 }
 
-console.clear()
+function hideAll() {
+    $('.more-list').hide()
+    $('.more-close').hide()
+}
+
 window.onload = function () {
     nav.init()
     // * skip => 是否跳過前面的動畫
     header_animate({ skip: false })
 
     const swiper = new SwiperCore('.swiper-container', swiper_options)
+
+    // 注意事項
+    hideAll()
+
+    $('.note-more').on('click', function (e) {
+        e.preventDefault()
+
+        $(this).next().fadeToggle(200)
+        $(this).find('.more-open').toggle()
+        $(this).find('.more-close').toggle()
+    })
 }

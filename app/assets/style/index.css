@@ -17,8 +17,43 @@
     .bg-joyWide {
         background-image: url('./../images/index/bg_menu_01.png');
     }
+
     .bg-wall {
         background-image: url('./../images/index/index_bg_texture.png');
+    }
+
+    .bg-block-gray {
+        background-image: url('./../images/index/index_bg_glay.png');
+    }
+
+    .bg-winder {
+        background-image: url('./../images/index/05/index_05_bg_icons.png');
+    }
+
+    .bg-winner-title {
+        background-image: url('./../images/index/05/index_05_bg_title.png');
+    }
+
+    .bg-winner-award {
+        background-image: url('./../images/index/05/index_05_bg_award.png');
+    }
+}
+
+@layer components {
+    /* * default Nav background */
+    nav .logo img.logo-red {
+        @apply inline-block;
+    }
+    nav .logo img.logo-white {
+        @apply hidden;
+    }
+    nav .nav-menubar {
+        @apply bg-primary text-white;
+    }
+
+    /* * joy Nav background */
+    .nav-joy {
+        @apply bg-joy;
     }
     .bg-icons {
         background-image: url('./../images/index/index_01_cut3_icons.png');
