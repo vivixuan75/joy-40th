@@ -1,0 +1,34 @@
+footer {
+    @apply bg-primary p-3;
+}
+
+.footer-wrap {
+    @apply flex items-center;
+}
+
+/* 40週年Logo */
+.footer-logo {
+    @apply w-6/12 2xl:w-11/12 lg:w-11/12 md:w-9/12 sm:w-9/12;
+}
+
+.footer-logo img {
+    @apply mb-2;
+    max-width: 100px;
+}
+
+footer p {
+    @apply text-sm text-white;
+}
+
+/* 社群網站 */
+.footer-community {
+    @apply w-auto;
+}
+
+.footer-community ul {
+    @apply flex flex-wrap justify-end;
+}
+
+.footer-community ul li + li {
+    @apply ml-2;
+}

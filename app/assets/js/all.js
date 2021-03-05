@@ -3,7 +3,18 @@ import { header_animate } from './landingAnimation'
 window.onload = function () {
     menubar()
     // * skip => 是否跳過前面的動畫
-    header_animate({ skip: false })
+    header_animate({ skip: true })
+
+    // 注意事項
+    hideAll()
+
+    $('.note-more').on('click', function (e) {
+        e.preventDefault()
+
+        $(this).next().fadeToggle(200)
+        $(this).find('.more-open').toggle()
+        $(this).find('.more-close').toggle()
+    })
 }
 
 function menubar() {
@@ -27,4 +38,9 @@ function toggleMenu() {
             el_menu.classList.add('animate-fadeOut')
         }
     }
+}
+
+function hideAll() {
+    $('.more-list').hide()
+    $('.more-close').hide()
 }

@@ -14,12 +14,25 @@
     .bg-joy {
         background-image: url('./../images/index/bg_menu_01.png');
     }
+
     .bg-wall {
         background-image: url('./../images/index/index_bg_texture.png');
     }
 
     .bg-block-gray {
-        background-image: url('./../images/index_03_bg.png');
+        background-image: url('./../images/index/index_bg_glay.png');
+    }
+
+    .bg-winder {
+        background-image: url('./../images/index/05/index_05_bg_icons.png');
+    }
+
+    .bg-winner-title {
+        background-image: url('./../images/index/05/index_05_bg_title.png');
+    }
+
+    .bg-winner-award {
+        background-image: url('./../images/index/05/index_05_bg_award.png');
     }
 }
 
