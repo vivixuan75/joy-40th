@@ -65,12 +65,10 @@ export default function Nav(
 
     // * 點擊後滑動到該區塊
     this.scrollingTo = (btn) => {
-        let targetSection = btn.dataset.scrollto
-        const targetHeight =
-            targetSection === 'section-header'
-                ? 0
-                : document.getElementById(targetSection).offsetTop
-
+        const targetSection = btn.dataset.scrollto
+        const offset = document.getElementById(targetSection).dataset.scrolloffset
+        let targetHeight = Number(document.getElementById(targetSection).offsetTop) + Number(offset)
+        console.log(targetHeight, offset)
         window.scrollTo({ top: targetHeight, behavior: 'smooth' })
     }
 
