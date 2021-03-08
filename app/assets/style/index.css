@@ -12,7 +12,7 @@
     }
 
     .bg-joy {
-        background-image: url('./../images/index/index_04_bg.png');
+        background-image: url('./../images/index/04/index_04_bg.png');
     }
     .bg-joyWide {
         background-image: url('./../images/index/bg_menu_01.png');
@@ -37,9 +37,7 @@
     .bg-winner-award {
         background-image: url('./../images/index/05/index_05_bg_award.png');
     }
-}
 
-@layer components {
     /* * default Nav background */
     nav .logo img.logo-red {
         @apply inline-block;
@@ -52,9 +50,9 @@
     }
 
     /* * joy Nav background */
-    .nav-joy {
+    /* .nav-joy {
         @apply bg-joy;
-    }
+    } */
     .bg-icons {
         background-image: url('./../images/index/index_01_cut3_icons.png');
     }

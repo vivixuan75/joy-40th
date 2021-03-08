@@ -18,8 +18,8 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "@babel/core": "^7.13.1",
-        "@babel/preset-env": "^7.13.0",
+        "@babel/core": "^7.13.8",
+        "@babel/preset-env": "^7.13.9",
         "@fortawesome/fontawesome-free": "^5.15.2",
         "bootstrap": "^5.0.0-beta2",
         "browser-sync": "^2.26.14",
@@ -40,7 +40,7 @@
         "gulp-sass": "^4.0.2",
         "gulp-sourcemaps": "^2.6.5",
         "install": "^0.13.0",
-        "jquery": "^3.5.1",
+        "jquery": "^3.6.0",
         "minimist": "^1.2.0",
         "morgan": "^1.9.1",
         "node-sass": "^4.14.1",
@@ -54,7 +54,7 @@
         "gulp-cssnano": "^2.1.3",
         "gulp-prettier": "^3.0.0",
         "gulp-purgecss": "^4.0.2",
-        "postcss": "^8.2.6",
+        "postcss": "^8.2.7",
         "tailwindcss": "^2.0.3",
         "terser-webpack-plugin": "^5.1.1",
         "webpack-stream": "^6.1.2"

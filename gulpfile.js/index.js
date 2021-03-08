@@ -4,7 +4,7 @@ const autoprefixer = require('autoprefixer')
 const minimist = require('minimist')
 const browserSync = require('browser-sync').create()
 const { envOptions } = require('./envOptions')
-const webpack = require('webpack-stream');
+const webpack = require('webpack-stream')
 // const TerserPlugin = require("terser-webpack-plugin");
 
 let options = minimist(process.argv.slice(2), envOptions)
@@ -43,7 +43,7 @@ function layoutHTML() {
 function sass() {
     const plugins = [autoprefixer()]
     const purge_options = {
-        content: ['./app/**/*.ejs', './app/**/*.html', './app/**/*.js']
+        content: ['./app/**/*.ejs', './app/**/*.html', './app/**/*.js'],
     }
     return gulp
         .src(envOptions.style.src)
@@ -62,22 +62,16 @@ function sass() {
 }
 
 function tailwindcss() {
-    const postcss_plugins = [
-        require('postcss-import'),
-        require('tailwindcss'), 
-        autoprefixer(),
-    ]
+    const postcss_plugins = [require('postcss-import'), require('tailwindcss'), autoprefixer()]
     const purge_options = {
         content: ['./app/**/*.ejs', './app/**/*.html', './app/**/*.js', './app/**/*.css'],
-        // * 這個直接給我忽略 py-3\.5 | 參考 https://n1ghtmare.github.io/2020-05-14/setting-up-tailwindcss/
-        // defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
         defaultExtractor: (content) => content.match(/[^<>"'`\s]*[^<>"'`\s:]/g) || [],
     }
     return gulp
         .src(envOptions.style.tailwindcss.src)
         .pipe($.postcss(postcss_plugins))
         .pipe($.if(options.env === 'production', $.purgecss(purge_options)))
-        // .pipe($.if(options.env === 'production', $.cssnano()))
+        .pipe($.if(options.env === 'production', $.cssnano()))
         .pipe(gulp.dest(envOptions.style.tailwindcss.path))
         .pipe(
             browserSync.reload({
@@ -114,26 +108,32 @@ function babel() {
         //         test: /\.js(\?.*)?$/i,
         //       })]
         // },
-        entry:{
+        entry: {
             all: envOptions.javascript.entry,
         },
         output: {
-            filename: '[name].js'
-        }
+            filename: '[name].js',
+        },
     }
     const webpack_config_dev = {
         mode: 'development',
-        entry:{
+        entry: {
             all: envOptions.javascript.entry,
         },
         output: {
-            filename: '[name].js'
-        }
+            filename: '[name].js',
+        },
     }
     return gulp
         .src(envOptions.javascript.entry)
         .pipe($.if(options.env === 'development', $.sourcemaps.init()))
-        .pipe($.if(options.env === 'development', webpack(webpack_config_dev), webpack(webpack_config_prod)))
+        .pipe(
+            $.if(
+                options.env === 'development',
+                webpack(webpack_config_dev),
+                webpack(webpack_config_prod)
+            )
+        )
         .pipe(
             $.babel({
                 presets: ['@babel/env'],
@@ -164,7 +164,7 @@ function browser() {
     })
 }
 
-function prettier(){
+function prettier() {
     const src = ['./app/**/*.js', './app/*.html', './app/**/*.css', './app/**/*.scss']
     return gulp
         .src(envOptions.prettier.src)

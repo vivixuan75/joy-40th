@@ -1,53 +1,54 @@
 @tailwind base;
-
-@font-face {
-    font-family: GenSenRounded;
-    font-weight: 400;
-    src: local('GenSenRounded-JP-M'),
-        url(./../fonts/fontFamily/genSenRounded-M.woff2) format('woff2'),
-        url(./../fonts/fontFamily/genSenRounded-M.woff) format('woff'),
-        url(./../fonts/fontFamily/genSenRounded-M.ttf) format('ttf');
-}
-@font-face {
-    font-family: GenSenRounded;
-    font-weight: 200;
-    src: local('GenSenRounded-JP-L'),
-        url(./../fonts/fontFamily/genSenRounded-L.woff2) format('woff2'),
-        url(./../fonts/fontFamily/genSenRounded-L.woff) format('woff'),
-        url(./../fonts/fontFamily/genSenRounded-L.ttf) format('ttf');
-}
-@font-face {
-    font-family: GenSenRounded;
-    font-weight: 600;
-    src: local('GenSenRounded-JP-H'),
-        url(./../fonts/fontFamily/genSenRounded-H.woff2) format('woff2'),
-        url(./../fonts/fontFamily/genSenRounded-H.woff) format('woff'),
-        url(./../fonts/fontFamily/genSenRounded-H.ttf) format('ttf');
-}
-html {
-    @apply font-genSenRounded font-normal;
-}
-section {
-    @apply overflow-hidden;
-}
-h1 {
-    @apply text-4xl font-bold;
-}
-h2 {
-    @apply text-3xl font-bold;
-}
-h3 {
-    @apply text-2xl font-bold;
-}
-h4 {
-    @apply text-xl font-bold;
-}
-h5 {
-    @apply text-lg font-bold;
-}
-h6 {
-    @apply text-base font-bold;
-}
-a {
-    @apply inline-block;
+@layer base {
+    @font-face {
+        font-family: GenSenRounded;
+        font-weight: 400;
+        src: local('GenSenRounded-JP-M'),
+            url(./../fonts/fontFamily/genSenRounded-M.woff2) format('woff2'),
+            url(./../fonts/fontFamily/genSenRounded-M.woff) format('woff'),
+            url(./../fonts/fontFamily/genSenRounded-M.ttf) format('ttf');
+    }
+    @font-face {
+        font-family: GenSenRounded;
+        font-weight: 200;
+        src: local('GenSenRounded-JP-L'),
+            url(./../fonts/fontFamily/genSenRounded-L.woff2) format('woff2'),
+            url(./../fonts/fontFamily/genSenRounded-L.woff) format('woff'),
+            url(./../fonts/fontFamily/genSenRounded-L.ttf) format('ttf');
+    }
+    @font-face {
+        font-family: GenSenRounded;
+        font-weight: 600;
+        src: local('GenSenRounded-JP-H'),
+            url(./../fonts/fontFamily/genSenRounded-H.woff2) format('woff2'),
+            url(./../fonts/fontFamily/genSenRounded-H.woff) format('woff'),
+            url(./../fonts/fontFamily/genSenRounded-H.ttf) format('ttf');
+    }
+    html {
+        @apply font-genSenRounded font-normal;
+    }
+    section {
+        @apply overflow-hidden;
+    }
+    h1 {
+        @apply text-4xl font-bold;
+    }
+    h2 {
+        @apply text-3xl font-bold;
+    }
+    h3 {
+        @apply text-2xl font-bold;
+    }
+    h4 {
+        @apply text-xl font-bold;
+    }
+    h5 {
+        @apply text-lg font-bold;
+    }
+    h6 {
+        @apply text-base font-bold;
+    }
+    a {
+        @apply inline-block;
+    }
 }

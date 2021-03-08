@@ -1,189 +1,191 @@
-/* 活動辦法 */
-.activity-method {
-    @apply flex flex-wrap justify-center w-full bg-block-gray p-10 sm:p-4 xs:p-4 xxs:p-4;
-}
+@tailwind components;
+@layer components {
+    /* 活動辦法 */
+    .activity-method {
+        @apply flex flex-wrap justify-center w-full bg-block-gray p-10 sm:p-4 xs:p-4 xxs:p-4;
+    }
 
-/* 標題 */
-.activity-method .title,
-.activity-method .wrap {
-    @apply flex flex-wrap justify-center w-full xl:w-4/5 pb-6;
-}
+    /* 標題 */
+    .activity-method .title,
+    .activity-method .wrap {
+        @apply flex flex-wrap justify-center w-full xl:w-4/5 pb-6;
+    }
 
-.activity-method img {
-    @apply pb-6;
-}
+    .activity-method img {
+        @apply pb-6;
+    }
 
-.activity-method h1 {
-    @apply text-primary relative w-full text-center font-medium;
-}
+    .activity-method h1 {
+        @apply text-primary relative w-full text-center font-medium;
+    }
 
-.activity-method h1:before,
-.activity-method h1:after {
-    @apply absolute border-t-3 w-5/12 md:w-4/12 sm:w-4/12 xs:w-3/12 xxs:w-2/12 border-primary top-4;
-    content: '';
-}
+    .activity-method h1:before,
+    .activity-method h1:after {
+        @apply absolute border-t-3 w-5/12 md:w-4/12 sm:w-4/12 xs:w-3/12 xxs:w-2/12 border-primary top-4;
+        content: '';
+    }
 
-.activity-method h1:before {
-    @apply left-0;
-}
+    .activity-method h1:before {
+        @apply left-0;
+    }
 
-.activity-method h1:after {
-    @apply right-0;
-}
+    .activity-method h1:after {
+        @apply right-0;
+    }
 
-/* 活動辦法內容 */
-.activity-method .wrap {
-    @apply justify-start;
-}
+    /* 活動辦法內容 */
+    .activity-method .wrap {
+        @apply justify-start;
+    }
 
-.activity-method .wrap h3 {
-    @apply w-full pb-3;
-}
+    .activity-method .wrap h3 {
+        @apply w-full pb-3;
+    }
 
-.activity-method .wrap ul {
-    @apply list-inside w-full;
-}
+    .activity-method .wrap ul {
+        @apply list-inside w-full;
+    }
 
-.activity-method .wrap ul li {
-    @apply relative text-xl list-inside font-medium ml-6;
-}
+    .activity-method .wrap ul li {
+        @apply relative text-xl list-inside font-medium ml-6;
+    }
 
-.activity-method .wrap ul li:before {
-    @apply absolute font-black text-xs text-primary inset-1 -ml-6;
-    font-family: 'Font Awesome 5 Free';
-    content: '\f111';
-}
+    .activity-method .wrap ul li:before {
+        @apply absolute font-black text-xs text-primary inset-1 -ml-6;
+        font-family: 'Font Awesome 5 Free';
+        content: '\f111';
+    }
 
-.activity-method .wrap .caption {
-    @apply mb-2;
-}
+    .activity-method .wrap .caption {
+        @apply mb-2;
+    }
 
-.activity-method .wrap .caption span {
-    @apply rounded-lg bg-black text-center text-white w-1/12 leading-10 my-5 mr-1.5 p-1.5;
-}
+    .activity-method .wrap .caption span {
+        @apply rounded-lg bg-black text-center text-white w-1/12 leading-10 my-5 mr-1.5 p-1.5;
+    }
 
-.activity-method .wrap p.small {
-    @apply text-sm text-gray-500 pb-3;
-}
+    .activity-method .wrap p.small {
+        @apply text-sm text-gray-500 pb-3;
+    }
 
-.activity-method .wrap ol {
-    @apply list-decimal ml-5;
-}
+    .activity-method .wrap ol {
+        @apply list-decimal ml-5;
+    }
 
-.activity-method .wrap ol li {
-    @apply leading-8;
-}
+    .activity-method .wrap ol li {
+        @apply leading-8;
+    }
 
-/* 獎項說明 */
-.awards {
-    @apply flex flex-wrap justify-between;
-}
+    /* 獎項說明 */
+    .awards {
+        @apply flex flex-wrap justify-between;
+    }
 
-.awards .wrap {
-    @apply md:w-3/6 sm:w-full md:justify-center sm:justify-start mb-4;
-}
+    .awards .wrap {
+        @apply md:w-3/6 sm:w-full md:justify-center sm:justify-start mb-4;
+    }
 
-.awards .wrap p.title {
-    @apply flex items-center justify-center bg-primary rounded-full text-2xl text-white w-20 h-20 z-10 p-2;
-}
+    .awards .wrap p.title {
+        @apply flex items-center justify-center bg-primary rounded-full text-2xl text-white w-20 h-20 z-10 p-2;
+    }
 
-.awards .wrap .group {
-    @apply bg-red-200 bg-opacity-50 rounded-2xl sm:w-11/12 xs:w-11/12 xxs:w-10/12 text-center mt-9 -ml-12 p-6;
-}
+    .awards .wrap .group {
+        @apply bg-red-200 bg-opacity-50 rounded-2xl sm:w-11/12 xs:w-11/12 xxs:w-10/12 text-center mt-9 -ml-12 p-6;
+    }
 
-.awards .wrap .group p.amount {
-    @apply text-primary mb-2;
-}
+    .awards .wrap .group p.amount {
+        @apply text-primary mb-2;
+    }
 
-.awards .wrap .group p.amount span {
-    @apply text-5xl pl-2 font-bold;
-}
+    .awards .wrap .group p.amount span {
+        @apply text-5xl pl-2 font-bold;
+    }
 
-.awards .wrap .group p.quota {
-    @apply text-primary mb-2;
-}
+    .awards .wrap .group p.quota {
+        @apply text-primary mb-2;
+    }
 
-.activity-method a {
-    @apply text-primary hover:text-blue-900;
-}
+    .activity-method a {
+        @apply text-primary hover:text-blue-900;
+    }
 
-/* 得獎名單 */
-.winner-wrap {
-    @apply flex flex-wrap justify-center bg-winder bg-repeat-x w-full px-32 md:p-0 sm:p-0 xs:p-0 xxs:p-0;
-}
+    /* 得獎名單 */
+    .winner-wrap {
+        @apply flex flex-wrap justify-center bg-winder bg-repeat-x w-full px-32 md:p-0 sm:p-0 xs:p-0 xxs:p-0;
+    }
 
-.winner-wrap .group {
-    @apply xl:w-7/12 w-full;
-}
+    .winner-wrap .group {
+        @apply xl:w-7/12 w-full;
+    }
 
-.winner-wrap .group + .group {
-    @apply mt-10;
-}
+    .winner-wrap .group + .group {
+        @apply mt-10;
+    }
 
-.winner-wrap .title-group {
-    @apply flex flex-wrap items-center justify-center mb-3;
-}
+    .winner-wrap .title-group {
+        @apply flex flex-wrap items-center justify-center mb-3;
+    }
 
-.winner-wrap .title-group .icon {
-    @apply relative flex justify-center w-16 z-99;
-}
+    .winner-wrap .title-group .icon {
+        @apply relative flex justify-center w-16 z-99;
+    }
 
-.winner-wrap .title-group .icon:before,
-.winner-wrap .title-group .icon:after {
-    @apply absolute rounded-full w-16 h-16 left-0;
-    content: '';
-}
+    .winner-wrap .title-group .icon:before,
+    .winner-wrap .title-group .icon:after {
+        @apply absolute rounded-full w-16 h-16 left-0;
+        content: '';
+    }
 
-.winner-wrap .title-group .icon:before {
-    @apply bg-primary -z-10 top-0;
-}
+    .winner-wrap .title-group .icon:before {
+        @apply bg-primary -z-10 top-0;
+    }
 
-.winner-wrap .title-group .icon:after {
-    @apply bg-red-800 -z-20 top-1;
-}
+    .winner-wrap .title-group .icon:after {
+        @apply bg-red-800 -z-20 top-1;
+    }
 
-.winner-wrap .title-group .icon img {
-    @apply z-99 my-4 pb-0;
-}
+    .winner-wrap .title-group .icon img {
+        @apply z-99 my-4 pb-0;
+    }
 
-.winner-wrap .title-group .title-con {
-    @apply w-auto flex justify-around items-center text-3xl text-primary bg-winner-title mx-5;
-    width:200px;
-        height:60px;
-}
+    .winner-wrap .title-group .title-con {
+        @apply w-auto flex justify-around items-center text-3xl text-primary bg-winner-title mx-5;
+        width: 200px;
+        height: 60px;
+    }
 
+    .winner-wrap .title-group .title-con p {
+        @apply tracking-widest;
+    }
 
-.winner-wrap .title-group .title-con p {
-    @apply tracking-widest;
-}
+    .winner-wrap .title-group .award {
+        @apply flex justify-around items-center text-3xl text-white bg-winner-award;
+        width: 94px;
+        height: 60px;
+    }
 
-.winner-wrap .title-group .award {
-    @apply flex justify-around items-center text-3xl text-white bg-winner-award;
-    width:94px;
-        height:60px; 
-}
+    .winner-list {
+        @apply bg-red-200 bg-opacity-50 rounded-md -mt-12 p-6 -z-99;
+    }
 
-.winner-list {
-    @apply bg-red-200 bg-opacity-50 rounded-md -mt-12 p-6 -z-99;
-}
+    .winner-list table {
+        @apply w-full text-xl text-primary text-center font-medium w-6/12 mt-6;
+    }
 
-.winner-list table {
-    @apply w-full text-xl text-primary text-center font-medium w-6/12 mt-6;
-}
+    .winner-list table th {
+        @apply border-b border-primary p-2;
+    }
 
-.winner-list table th {
-    @apply border-b border-primary p-2;
-}
+    .winner-list table td {
+        @apply border-b border-white p-2;
+    }
 
-.winner-list table td {
-    @apply border-b border-white p-2;
-}
+    /* 注意事項 */
+    .note-more {
+        @apply flex justify-center items-center;
+    }
 
-/* 注意事項 */
-.note-more {
-    @apply flex justify-center items-center;
-}
-
-.note-more a {
-    @apply flex justify-center items-center bg-white rounded-full border-primary text-primary border-2 w-12 h-12;
+    .note-more a {
+        @apply flex justify-center items-center bg-white rounded-full border-primary text-primary border-2 w-12 h-12;
+    }
 }
