@@ -5,7 +5,7 @@ engine: ejs
 current: index
 ---
 
-<section id="section-studio" class="studio-section">
+<section id="section-studio" data-scrollOffset="0" class="studio-section">
     <div class="studio__innerWrap">
         <div class="container relative">
             <!-- 背景圖 -->
@@ -120,7 +120,11 @@ current: index
                         </span>
                     </h3>
                     <div class="text-center text-xl md:text-2xl">
-                        <a href="#" data-scrollTo="section-activity"><span class="cursor-pointer border-b border-black">活動辦法</span></a>
+                        <span
+                            class="cursor-pointer border-b border-black"
+                            data-scrollTo="section-activity-method"
+                            >活動辦法</span
+                        >
                     </div>
                     <div
                         class="absolute -bottom-20 left-1/2 transform translate-y-full -translate-x-1/2 block md:hidden"
@@ -133,7 +137,7 @@ current: index
     </div>
 </section>
 
-<section id="section-album" class="album-section">
+<section id="section-album" data-scrollOffset="-30" class="album-section">
     <div class="container">
         <div class="row py-16">
             <div class="col w-full mb-12">
@@ -145,7 +149,7 @@ current: index
                             alt=""
                         />
                     </span>
-                    <h2 class="text-3xl md:text-4xl mb-2">時光相冊</h2>
+                    <h2 class="section-title-line text-3xl md:text-4xl mb-2">時光相冊</h2>
                     <p class="text-xl xs:text-2xl md:text-3xl">
                         長大後的懊惱，如果小時候能懂就好～
                     </p>
@@ -260,7 +264,7 @@ current: index
     </div>
 </section>
 
-<section id="section-videos" class="videos-section">
+<section id="section-videos" data-scrollOffset="-30" class="videos-section">
     <div class="container">
         <div class="row py-16">
             <div class="col w-full mb-12">
@@ -332,202 +336,199 @@ current: index
     </div>
 </section>
 
-<section id="section-activity" class="activity-method" >
-    <div class="title">
-        <img src="assets/images/index/05/index_05_icon_title.png" />
-        <h1>活動辦法</h1>
-    </div>
-    <div class="wrap">
-        <h3>【時光照相館】</h3>
-        <ul>
-            <li>活動時間：2021年4月1日至2021年5月30日23:59分截止。</li>
-            <li>
-                活動說明：
-                <div class="caption">
-                    <p><span>方式1</span>選擇Facebook相機</p>
-                    <p>
-                        參與【時光照相館】濾鏡活動，並將濾鏡照片留言於佳音FB粉專指定貼文下方，即可參加抽獎。
+<section id="section-activity-method" data-scrollOffset="-30">
+    <div class="activity-method py-16">
+        <div class="title">
+            <img class="relative left-5" src="assets/images/index/05/index_05_icon_title.png" />
+            <h1>活動辦法</h1>
+        </div>
+        <div class="wrap">
+            <h3>【時光照相館】</h3>
+            <ul>
+                <li>活動時間：2021年4月1日至2021年5月30日23:59分截止。</li>
+                <li>
+                    活動說明：
+                    <div class="caption">
+                        <p><span>方式1</span>選擇Facebook相機</p>
+                        <p>
+                            參與【時光照相館】濾鏡活動，並將濾鏡照片留言於佳音FB粉專指定貼文下方，即可參加抽獎。
+                        </p>
+                    </div>
+                    <div class="caption">
+                        <p><span>方式2</span>選擇Instagram相機</p>
+                        <p>
+                            參與【時光照相館】濾鏡活動，且將濾鏡照片分享至限時動態（需保留截圖作為領獎憑證），並於佳音IG帳號指定貼文下方，Tag@一位好友，即可參加抽獎。
+                        </p>
+                    </div>
+                    <p class="small">
+                        <i class="fas fa-star"></i>
+                        兩種方式皆具備相同抽獎資格，可擇一或同時參加，一個帳號僅限一次中獎機會。
+                        <i class="fas fa-star"></i>
                     </p>
-                </div>
-
-                <div class="caption">
-                    <p><span>方式2</span>選擇Instagram相機</p>
-                    <p>
-                        參與【時光照相館】濾鏡活動，且將濾鏡照片分享至限時動態（需保留截圖作為領獎憑證），並於佳音IG帳號指定貼文下方，Tag@一位好友，即可參加抽獎。
-                    </p>
-                </div>
-
-                <p class="small">
-                    <i class="fas fa-star"></i>
-                    兩種方式皆具備相同抽獎資格，可擇一或同時參加，一個帳號僅限一次中獎機會。
-                    <i class="fas fa-star"></i>
-                </p>
-            </li>
-            <li>
-                獎項說明
-                <div class="awards">
-                    <div class="wrap">
-                        <p class="title">頭獎</p>
-                        <div class="group">
-                            <p class="amount">NT<span>8,000</span></p>
-                            <p class="quota">共計乙名</p>
-                            <p>活動總期間抽出乙名，<br />預計6/14公布。</p>
+                </li>
+                <li>
+                    獎項說明
+                    <div class="awards">
+                        <div class="wrap">
+                            <p class="title">頭獎</p>
+                            <div class="group">
+                                <p class="amount">NT<span>8,000</span></p>
+                                <p class="quota">共計乙名</p>
+                                <p>活動總期間抽出乙名，<br />預計6/14公布。</p>
+                            </div>
+                        </div>
+                        <div class="wrap">
+                            <p class="title">二獎</p>
+                            <div class="group">
+                                <p class="amount">NT<span>5,000</span></p>
+                                <p class="quota">共計八名</p>
+                                <p>每月月底抽出四名，預計<br />公布日期5/14、6/14。</p>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="wrap">
-                        <p class="title">二獎</p>
-                        <div class="group">
-                            <p class="amount">NT<span>5,000</span></p>
-                            <p class="quota">共計八名</p>
-                            <p>每月月底抽出四名，預計<br />公布日期5/14、6/14。</p>
-                        </div>
-                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- 注意事項 -->
+        <div class="title">
+            <h1>注意事項</h1>
+        </div>
+        <div class="wrap">
+            <ol>
+                <li>
+                    活動參加者於參加本活動之時，即同意接受本活動辦法及注意事項，如有違反，主辦單位有權取消其參加資格。
+                </li>
+                <li>
+                    嚴禁色情、暴力、不雅字眼、人身攻擊、廣告推銷等內容，若有違反前述規範，主辦單位得以要求下架，並刪除留言與參加資格，且不另行通知。
+                </li>
+                <li>
+                    活動參加者如有任何破壞活動進行或影響網站管理者的運作、違反網站管理者的使用條款，主辦單位得取消其參加活動之資格，且不另行通知。
+                </li>
+                <li>
+                    本活動如有任何因電腦、網路電話線路等其他不可歸於活動主辦單位之因素，而使參加活動者之登錄資料有遺失、錯誤等所導致無效之情況，主辦單位不負任何法律責任，參與本活動者或得獎者亦不得因此異議。
+                </li>
+                <li>
+                    頭獎抽獎資格之日期區間為4/1~5/30之參加者；二獎兩次抽獎資格之日期區間分別為4/1~4/30、4/1~5/30之參加者。可重複參加，但一人僅限一次中獎機會，中獎日期依上述公告於佳音【時光照相館】活動頁面，請自行留意得獎訊息，主辦單位不另行通知中獎人。
+                </li>
+                <li>中獎者須於6/30（三）23:59前主動提供領獎資料，逾期視同放棄資格。</li>
+                <li>中獎者限中華民國境內居住之個人。</li>
+                <li>中獎者不得向主辦單位要求領獎期限延後，亦不得兌換等值物品。</li>
+                <li>
+                    中獎者領取獎項後，若有遺失、被竊或過期失效等喪失佔有之情形，主辦單位不負補發獎項之責任。
+                </li>
+                <li>中獎者應提供申報相關文件（身分證正反面影本）予主辦單位，始得領取活動獎項。</li>
+                <div class="more-list">
+                    <li>
+                        中獎者領取獎項如未滿20歲，且其兌換單筆價值超過新台幣之20,000元，則應於兌換之同時檢附其法定代理人/監護人之「同意書」，否則主辦單位得取消其兌換資格。
+                    </li>
+                    <li>
+                        依中華民國稅法規定，獎項金額若超過新台幣1,000元，中獎人須依規定填寫並繳交相關中獎收據。中獎者若無法配合，則視為自動棄權，不具得獎資格。獎項價值超過新台幣20,000者，中獎者依法需自付10%稅額〈海外人士或不具中華民國身份者，中獎所得稅則為20%〉。主辦單位將開立各類所得稅扣繳憑單給中獎者。如果中獎者不願給付得獎商品之稅額，則視為中獎者自動棄權，不具得獎資格。
+                    </li>
+                    <li>
+                        主辦單位保留隨時變更活動辦法，以及暫停、延長、提前終止本活動之權利，本活動辦法若未盡詳細事宜或因故無法進行時，主辦單位得隨時修訂公佈，修改訊息將於本網站上公佈，不另行通知。
+                    </li>
+                    <li>
+                        主辦單位就活動內容得依實際狀況及較佳效果斟酌調整，並保有對於活動規則之解釋權利。
+                    </li>
+                    <li>
+                        如有任何活動相關問題，歡迎私訊主辦單位FB粉專「佳音英語-joy english－<a
+                            href="https://www.facebook.com/joyteachers"
+                            target="_blank"
+                            >https://www.facebook.com/joyteachers</a
+                        >」，主辦單位將於週一至週五08:30~17:30進行處理並回覆。
+                    </li>
                 </div>
-            </li>
-        </ul>
-    </div>
-
-    <!-- 注意事項 -->
-
-    <div class="title">
-        <h1>注意事項</h1>
-    </div>
-
-    <div class="wrap">
-        <ol>
-            <li>
-                活動參加者於參加本活動之時，即同意接受本活動辦法及注意事項，如有違反，主辦單位有權取消其參加資格。
-            </li>
-            <li>
-                嚴禁色情、暴力、不雅字眼、人身攻擊、廣告推銷等內容，若有違反前述規範，主辦單位得以要求下架，並刪除留言與參加資格，且不另行通知。
-            </li>
-            <li>
-                活動參加者如有任何破壞活動進行或影響網站管理者的運作、違反網站管理者的使用條款，主辦單位得取消其參加活動之資格，且不另行通知。
-            </li>
-            <li>
-                本活動如有任何因電腦、網路電話線路等其他不可歸於活動主辦單位之因素，而使參加活動者之登錄資料有遺失、錯誤等所導致無效之情況，主辦單位不負任何法律責任，參與本活動者或得獎者亦不得因此異議。
-            </li>
-            <li>
-                頭獎抽獎資格之日期區間為4/1~5/30之參加者；二獎兩次抽獎資格之日期區間分別為4/1~4/30、4/1~5/30之參加者。可重複參加，但一人僅限一次中獎機會，中獎日期依上述公告於佳音【時光照相館】活動頁面，請自行留意得獎訊息，主辦單位不另行通知中獎人。
-            </li>
-            <li>中獎者須於6/30（三）23:59前主動提供領獎資料，逾期視同放棄資格。</li>
-            <li>中獎者限中華民國境內居住之個人。</li>
-            <li>中獎者不得向主辦單位要求領獎期限延後，亦不得兌換等值物品。</li>
-            <li>
-                中獎者領取獎項後，若有遺失、被竊或過期失效等喪失佔有之情形，主辦單位不負補發獎項之責任。
-            </li>
-            <li>中獎者應提供申報相關文件（身分證正反面影本）予主辦單位，始得領取活動獎項。</li>
-
-            <div class="more-list">
-                <li>
-                    中獎者領取獎項如未滿20歲，且其兌換單筆價值超過新台幣之20,000元，則應於兌換之同時檢附其法定代理人/監護人之「同意書」，否則主辦單位得取消其兌換資格。
-                </li>
-                <li>
-                    依中華民國稅法規定，獎項金額若超過新台幣1,000元，中獎人須依規定填寫並繳交相關中獎收據。中獎者若無法配合，則視為自動棄權，不具得獎資格。獎項價值超過新台幣20,000者，中獎者依法需自付10%稅額〈海外人士或不具中華民國身份者，中獎所得稅則為20%〉。主辦單位將開立各類所得稅扣繳憑單給中獎者。如果中獎者不願給付得獎商品之稅額，則視為中獎者自動棄權，不具得獎資格。
-                </li>
-                <li>
-                    主辦單位保留隨時變更活動辦法，以及暫停、延長、提前終止本活動之權利，本活動辦法若未盡詳細事宜或因故無法進行時，主辦單位得隨時修訂公佈，修改訊息將於本網站上公佈，不另行通知。
-                </li>
-                <li>
-                    主辦單位就活動內容得依實際狀況及較佳效果斟酌調整，並保有對於活動規則之解釋權利。
-                </li>
-                <li>
-                    如有任何活動相關問題，歡迎私訊主辦單位FB粉專「佳音英語-joy english－<a
-                        href="https://www.facebook.com/joyteachers"
-                        target="_blank"
-                        >https://www.facebook.com/joyteachers</a
-                    >」，主辦單位將於週一至週五08:30~17:30進行處理並回覆。
-                </li>
-            </div>
-            <div class="note-more">
-                <a href="#" class="">
-                    <span class="more-open fas fa-plus"></span>
-                    <span class="more-close fas fa-minus"></span>
-                </a>
-            </div>
-        </ol>
+                <div class="note-more mt-12">
+                    <a href="#" class="">
+                        <span class="more-open fas fa-plus"></span>
+                        <span class="more-close fas fa-minus"></span>
+                    </a>
+                </div>
+            </ol>
+        </div>
     </div>
 </section>
 
-<section id="section-winner" class="activity-method">
-    <!-- 得獎名單 -->
-    <div class="title">
-        <h1>得獎名單</h1>
-    </div>
-
-    <div class="winner-wrap">
-        <div class="group">
-            <div class="title-group">
-                <div class="icon">
-                    <img src="assets/images/index/05/index_05_icon_camera.png" />
-                </div>
-                <div class="title-con">
-                    <p>時光照相館</p>
-                </div>
-                <div class="award">
-                    <p>頭獎</p>
-                </div>
-            </div>
-
-            <div class="winner-list">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>FB/IG</th>
-                            <th>帳號</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>FB</td>
-                            <td>田〇國</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+<section id="section-winner" data-scrollOffset="-80">
+    <div class="activity-method pt-10">
+        <!-- 得獎名單 -->
+        <div class="title">
+            <h1>得獎名單</h1>
         </div>
 
-        <div class="group">
-            <div class="title-group">
-                <div class="icon">
-                    <img src="assets/images/index/05/index_05_icon_camera.png" />
+        <div class="winner-wrap">
+            <div class="group">
+                <div class="title-group">
+                    <div class="icon">
+                        <img src="assets/images/index/05/index_05_icon_camera.png" />
+                    </div>
+                    <div class="title-con">
+                        <p>時光照相館</p>
+                    </div>
+                    <div class="award">
+                        <p>頭獎</p>
+                    </div>
                 </div>
-                <div class="title-con">
-                    <p>時光照相館</p>
-                </div>
-                <div class="award">
-                    <p>二獎</p>
+
+                <div class="winner-list">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>FB/IG</th>
+                                <th>帳號</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>FB</td>
+                                <td>田〇國</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
 
-            <div class="winner-list">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>FB/IG</th>
-                            <th>帳號</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>FB</td>
-                            <td>田〇國</td>
-                        </tr>
-                        <tr>
-                            <td>IG</td>
-                            <td>J〇〇g K〇〇K</td>
-                        </tr>
-                        <tr>
-                            <td>FB</td>
-                            <td>Ta〇</td>
-                        </tr>
-                        <tr>
-                            <td>IG</td>
-                            <td>金〇亨</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="group">
+                <div class="title-group">
+                    <div class="icon">
+                        <img src="assets/images/index/05/index_05_icon_camera.png" />
+                    </div>
+                    <div class="title-con">
+                        <p>時光照相館</p>
+                    </div>
+                    <div class="award">
+                        <p>二獎</p>
+                    </div>
+                </div>
+
+                <div class="winner-list">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>FB/IG</th>
+                                <th>帳號</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>FB</td>
+                                <td>田〇國</td>
+                            </tr>
+                            <tr>
+                                <td>IG</td>
+                                <td>J〇〇g K〇〇K</td>
+                            </tr>
+                            <tr>
+                                <td>FB</td>
+                                <td>Ta〇</td>
+                            </tr>
+                            <tr>
+                                <td>IG</td>
+                                <td>金〇亨</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>

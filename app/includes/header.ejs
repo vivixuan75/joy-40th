@@ -1,7 +1,7 @@
-<header id="section-header" class="header">
+<header id="section-header" class="header header_height">
     <div class="bg-black">
         <div class="container px-0">
-            <div id="cut1" class="max-h-screenLimit h-screen flex-col-center">
+            <div id="cut1" class="flex-col-center header_height">
                 <video
                     id="video-desktop"
                     muted
@@ -21,15 +21,13 @@
             </div>
         </div>
     </div>
-    <div class="header__elementsCuts">
+    <div class="header__elementsCuts header_height">
         <div class="container">
-            <div class="row justify-center max-h-screenLimit h-screen">
+            <div class="row justify-center">
                 <div id="cut2" class="opacity-0 hidden">
                     <div class="container">
                         <div class="row">
-                            <div
-                                class="col w-full max-h-screenLimit h-screen flex flex-col justify-between"
-                            >
+                            <div class="col w-full header_height flex flex-col justify-between">
                                 <div
                                     class="py-14 text-center text-primary flex-col-center flex-grow"
                                 >
@@ -51,9 +49,7 @@
                 <div id="cut3" class="opacity-0 hidden">
                     <div class="container">
                         <div class="row">
-                            <div
-                                class="col w-full max-h-screenLimit h-screen flex flex-col justify-between"
-                            >
+                            <div class="col w-full header_height flex flex-col justify-between">
                                 <div
                                     class="relative z-10 py-14 flex-col-center flex-grow text-center text-primary tracking-widest"
                                 >
@@ -110,5 +106,10 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="skip absolute right-0 bottom-0">
+        <button id="headerSkip" class="p-4 outline-none text-gray-700 hover:text-primary">
+            skip >>
+        </button>
     </div>
 </header>

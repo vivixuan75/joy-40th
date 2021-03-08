@@ -47,12 +47,12 @@ function sass() {
     }
     return gulp
         .src(envOptions.style.src)
-        .pipe($.sourcemaps.init())
+        .pipe($.if(options.env === 'development', $.sourcemaps.init()))
         .pipe($.sass().on('error', $.sass.logError))
         .pipe($.postcss(plugins))
         .pipe($.if(options.env === 'production', $.purgecss(purge_options)))
         .pipe($.if(options.env === 'production', $.cssnano()))
-        .pipe($.sourcemaps.write('.'))
+        .pipe($.if(options.env === 'development', $.sourcemaps.write('.')))
         .pipe(gulp.dest(envOptions.style.path))
         .pipe(
             browserSync.reload({
@@ -69,9 +69,11 @@ function tailwindcss() {
     }
     return gulp
         .src(envOptions.style.tailwindcss.src)
+        .pipe($.if(options.env === 'development', $.sourcemaps.init()))
         .pipe($.postcss(postcss_plugins))
         .pipe($.if(options.env === 'production', $.purgecss(purge_options)))
         .pipe($.if(options.env === 'production', $.cssnano()))
+        .pipe($.if(options.env === 'development', $.sourcemaps.write('.')))
         .pipe(gulp.dest(envOptions.style.tailwindcss.path))
         .pipe(
             browserSync.reload({
@@ -165,7 +167,6 @@ function browser() {
 }
 
 function prettier() {
-    const src = ['./app/**/*.js', './app/*.html', './app/**/*.css', './app/**/*.scss']
     return gulp
         .src(envOptions.prettier.src)
         .pipe($.prettier(envOptions.prettier.config))

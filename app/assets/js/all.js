@@ -1,13 +1,19 @@
-import { header_animate } from './landingAnimation'
+import { header_animate } from './custom/landingAnimation'
 import Nav from './custom/nav'
 import swiper_options from './custom/swiper'
 import SwiperCore, { Pagination } from 'swiper/core'
 
 SwiperCore.use([Pagination])
 
-// * scroll_last 用來判斷捲動方向 (Nav 用)
-var scroll_last = 0
-const nav = new Nav()
+const nav = new Nav({
+    // * Nav 的 class
+    nav: '.nav',
+    // * Nav 消失時使用的 class
+    addClass: 'nav-hideBg',
+    breakPoint: 1024,
+    scrollingHide: false,
+    scrollSpy: true,
+})
 
 function hideAll() {
     $('.more-list').hide()
@@ -15,9 +21,10 @@ function hideAll() {
 }
 
 window.onload = function () {
-    nav.init()
     // * skip => 是否跳過前面的動畫
     header_animate({ skip: false })
+
+    nav.init()
 
     const swiper = new SwiperCore('.swiper-container', swiper_options)
 

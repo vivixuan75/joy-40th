@@ -21,20 +21,23 @@
     .albumCard .content__text {
         @apply inline-block pt-2 pb-1 bg-white text-primary;
     }
+
+    /*! purgecss start ignore */
     /* swiper */
     .album-section .swiper-slide {
         @apply transition-all duration-300;
     }
-    .album-section .swiper-slide {
+    /* .album-section .swiper-slide {
         @apply opacity-60 md:opacity-100;
-    }
-    .album-section .swiper-slide-active {
+    } */
+    /* .album-section .swiper-slide-active {
         opacity: 1;
-    }
+    } */
     .album-section .swiper-pagination-bullet {
         @apply bg-primary w-2 transition-all duration-300;
     }
     .album-section .swiper-pagination-bullet-active {
         @apply rounded-lg w-8;
     }
+    /*! purgecss end ignore */
 }

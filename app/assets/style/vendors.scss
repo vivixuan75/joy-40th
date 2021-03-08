@@ -5,5 +5,7 @@ $fa-font-path: './../fonts/fontawesome';
 @import './../../../node_modules/@fortawesome/fontawesome-free/scss/brands';
 @import './../../../node_modules/@fortawesome/fontawesome-free/scss/solid';
 
+/*! purgecss start ignore */
 @import './../../../node_modules/swiper/swiper.scss';
 @import './../../../node_modules/swiper/components/pagination/pagination.scss';
+/*! purgecss end ignore */
