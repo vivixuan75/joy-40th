@@ -44,13 +44,13 @@
         "minimist": "^1.2.0",
         "morgan": "^1.9.1",
         "node-sass": "^4.14.1",
-        "npm": "^7.6.0",
+        "npm": "^7.6.1",
         "onchange": "^7.1.0",
         "postcss-import": "^14.0.0",
         "swiper": "^6.4.15"
     },
     "devDependencies": {
-        "autoprefixer": "^10.2.4",
+        "autoprefixer": "^10.2.5",
         "gulp-cssnano": "^2.1.3",
         "gulp-prettier": "^3.0.0",
         "gulp-purgecss": "^4.0.2",
