@@ -1,6 +1,8 @@
 import { debounce, throttle } from './../extraFunctions'
 
 export default function Nav(options = { nav: '.nav', addClass: 'nav-hideBg', breakPoint: 1024 }) {
+    var scroll_last = 0
+
     const _breakPoint = options.breakPoint
     const _el_nav = document.querySelector(options.nav)
     const _el_bar = document.querySelector('[data-menubar]')

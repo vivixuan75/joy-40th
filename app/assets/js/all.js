@@ -1,4 +1,4 @@
-import { header_animate } from './landingAnimation'
+import { header_animate } from './custom/landingAnimation'
 import Nav from './custom/nav'
 import swiper_options from './custom/swiper'
 import SwiperCore, { Pagination } from 'swiper/core'
@@ -6,7 +6,6 @@ import SwiperCore, { Pagination } from 'swiper/core'
 SwiperCore.use([Pagination])
 
 // * scroll_last 用來判斷捲動方向 (Nav 用)
-var scroll_last = 0
 const nav = new Nav()
 
 function hideAll() {
