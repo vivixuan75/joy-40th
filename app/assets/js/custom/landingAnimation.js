@@ -43,7 +43,6 @@ export function header_animate(options = { skip: false }) {
                     .then(() => {
                         // Automatic playback started!
                         // Show playing UI.
-                        console.log('video playing')
                     })
                     .catch((error) => {
                         master.play('final')
@@ -52,7 +51,7 @@ export function header_animate(options = { skip: false }) {
             }
         }
         const tl = gsap.timeline()
-        tl.call(autoplay)
+        tl.set('section', { display: 'none' }).set('footer', { display: 'none' }).call(autoplay)
         return tl
     }
 
@@ -89,6 +88,8 @@ export function header_animate(options = { skip: false }) {
                 duration: 1,
                 opacity: 1,
             })
+            .set('section', { display: 'block' })
+            .set('footer', { display: 'block' })
             .set('#headerSkip', { display: 'none' })
         return tl
     }

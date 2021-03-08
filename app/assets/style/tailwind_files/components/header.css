@@ -9,9 +9,9 @@
     }
     .header_height {
         /* version 1 */
-        /* @apply max-h-screen h-screen; */
+        @apply max-h-screen h-screen;
         /* version 2 */
-        @apply h-screen;
-        max-height: 90vh;
+        /* @apply h-screen;
+        max-height: 90vh; */
     }
 }
