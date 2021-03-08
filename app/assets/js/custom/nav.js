@@ -68,7 +68,6 @@ export default function Nav(
         const targetSection = btn.dataset.scrollto
         const offset = document.getElementById(targetSection).dataset.scrolloffset
         let targetHeight = Number(document.getElementById(targetSection).offsetTop) + Number(offset)
-        console.log(targetHeight, offset)
         window.scrollTo({ top: targetHeight, behavior: 'smooth' })
     }
 
@@ -85,11 +84,25 @@ export default function Nav(
                     ? {
                           btn: btn,
                           offsetTop: document.getElementById(btn.dataset.scrollto).offsetTop,
+                          customOffset: Number(
+                              document.getElementById(btn.dataset.scrollto).dataset.scrolloffset
+                          ),
                       }
                     : {}
             })
             .sort((a, b) => a.offsetTop - b.offsetTop)
-        const currentSection = navButtons.find((section) => section.offsetTop >= current_offsetTop)
+        const currentSection = navButtons.find((section, index, array) => {
+            if (index < array.length - 1) {
+                return (
+                    array[index + 1].offsetTop >=
+                    current_offsetTop - array[index + 1].customOffset + 5
+                )
+            } else if (index === array.length - 1) {
+                return true
+            } else {
+                return false
+            }
+        })
         _el_navScrollBtn.forEach((btn) => {
             if (btn !== undefined && currentSection !== undefined) {
                 btn === currentSection.btn

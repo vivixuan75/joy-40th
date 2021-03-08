@@ -21,9 +21,10 @@ function hideAll() {
 }
 
 window.onload = function () {
-    nav.init()
     // * skip => 是否跳過前面的動畫
     header_animate({ skip: false })
+
+    nav.init()
 
     const swiper = new SwiperCore('.swiper-container', swiper_options)
 
