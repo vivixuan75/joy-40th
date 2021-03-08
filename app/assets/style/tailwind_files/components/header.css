@@ -1,7 +1,7 @@
 @tailwind components;
 @layer components {
     .header {
-        @apply overflow-hidden;
+        @apply overflow-hidden relative;
         /* max-height: 90vh */
     }
     .header__elementsCuts {

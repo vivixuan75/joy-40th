@@ -27,6 +27,9 @@ function Video() {
 export function header_animate(options = { skip: false }) {
     const master_video = gsap.timeline()
     const master = gsap.timeline({ paused: true })
+    const skipBtn = document.getElementById('headerSkip')
+
+    skipBtn.addEventListener('click', skipToFinal)
 
     function showNav() {
         document.querySelector('.navWrap').classList.remove('hide')
@@ -81,10 +84,12 @@ export function header_animate(options = { skip: false }) {
 
     function cut4() {
         const tl = gsap.timeline()
-        tl.set('#cut4', { display: 'block' }).to('#cut4', {
-            duration: 1,
-            opacity: 1,
-        })
+        tl.set('#cut4', { display: 'block' })
+            .to('#cut4', {
+                duration: 1,
+                opacity: 1,
+            })
+            .set('#headerSkip', { display: 'none' })
         return tl
     }
 
@@ -104,6 +109,10 @@ export function header_animate(options = { skip: false }) {
             return master.play()
         })
     } else {
+        skipToFinal()
+    }
+
+    function skipToFinal() {
         master.play('final')
         showNav()
     }

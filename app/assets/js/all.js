@@ -5,8 +5,15 @@ import SwiperCore, { Pagination } from 'swiper/core'
 
 SwiperCore.use([Pagination])
 
-// * scroll_last 用來判斷捲動方向 (Nav 用)
-const nav = new Nav()
+const nav = new Nav({
+    // * Nav 的 class
+    nav: '.nav',
+    // * Nav 消失時使用的 class
+    addClass: 'nav-hideBg',
+    breakPoint: 1024,
+    scrollingHide: false,
+    scrollSpy: true,
+})
 
 function hideAll() {
     $('.more-list').hide()

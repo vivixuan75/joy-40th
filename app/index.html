@@ -120,7 +120,11 @@ current: index
                         </span>
                     </h3>
                     <div class="text-center text-xl md:text-2xl">
-                        <span class="cursor-pointer border-b border-black">活動辦法</span>
+                        <span
+                            class="cursor-pointer border-b border-black"
+                            data-scrollTo="section-activity-method"
+                            >活動辦法</span
+                        >
                     </div>
                     <div
                         class="absolute -bottom-20 left-1/2 transform translate-y-full -translate-x-1/2 block md:hidden"
@@ -145,7 +149,7 @@ current: index
                             alt=""
                         />
                     </span>
-                    <h2 class="text-3xl md:text-4xl mb-2">時光相冊</h2>
+                    <h2 class="section-title-line text-3xl md:text-4xl mb-2">時光相冊</h2>
                     <p class="text-xl xs:text-2xl md:text-3xl">
                         長大後的懊惱，如果小時候能懂就好～
                     </p>
@@ -332,9 +336,9 @@ current: index
     </div>
 </section>
 
-<div class="activity-method">
+<div id="section-activity-method" class="activity-method py-16">
     <div class="title">
-        <img src="assets/images/index/05/index_05_icon_title.png" />
+        <img class="relative left-5" src="assets/images/index/05/index_05_icon_title.png" />
         <h1>活動辦法</h1>
     </div>
     <div class="wrap">
@@ -440,7 +444,7 @@ current: index
                     >」，主辦單位將於週一至週五08:30~17:30進行處理並回覆。
                 </li>
             </div>
-            <div class="note-more">
+            <div class="note-more mt-12">
                 <a href="#" class="">
                     <span class="more-open fas fa-plus"></span>
                     <span class="more-close fas fa-minus"></span>
@@ -448,7 +452,9 @@ current: index
             </div>
         </ol>
     </div>
+</div>
 
+<div id="section-winner" class="activity-method pt-20">
     <!-- 得獎名單 -->
     <div class="title">
         <h1>得獎名單</h1>

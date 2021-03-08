@@ -1,6 +1,14 @@
 import { debounce, throttle } from './../extraFunctions'
 
-export default function Nav(options = { nav: '.nav', addClass: 'nav-hideBg', breakPoint: 1024 }) {
+export default function Nav(
+    options = {
+        nav: '.nav',
+        addClass: 'nav-hideBg',
+        breakPoint: 1024,
+        scrollingHide: true,
+        scrollSpy: true,
+    }
+) {
     var scroll_last = 0
 
     const _breakPoint = options.breakPoint
@@ -8,6 +16,7 @@ export default function Nav(options = { nav: '.nav', addClass: 'nav-hideBg', bre
     const _el_bar = document.querySelector('[data-menubar]')
     const _el_menu = document.querySelector('[data-menu]')
     const _el_scrollBtn = [...document.querySelectorAll('[data-scrollTo]')]
+    const _el_navScrollBtn = [...document.querySelectorAll('.nav-btn[data-scrollTo]')]
     const _class_navHideBg = options.addClass
     let vm = this
 
@@ -18,16 +27,33 @@ export default function Nav(options = { nav: '.nav', addClass: 'nav-hideBg', bre
         if (_el_scrollBtn.length === 0) console.error('找不到 scrollBtn')
         else vm.scrollingBtnListener()
 
-        const debounceScroll = debounce(vm.scrollAndHide, 30)
+        vm.scrollSpy()
+
+        const debounceScroll = debounce(vm.scrollingListener, 30)
         window.addEventListener('scroll', () => {
             debounceScroll()
         })
-        const throttleResize = throttle(vm.menuAppearanceByResize, 100)
+        const throttleResize = throttle(vm.resizingListener, 100)
         window.addEventListener('resize', () => {
             throttleResize()
         })
     }
 
+    /** ==========================================================
+     *  * 監聽封裝
+     */
+    this.scrollingListener = () => {
+        this.scrollAndHide()
+        this.scrollSpy()
+    }
+
+    this.resizingListener = () => {
+        window.innerWidth > _breakPoint ? vm.menuOpen() : vm.menuClose()
+    }
+
+    /** ==========================================================
+     *  * 點擊 Nav 後滑動到指定區塊
+     */
     this.scrollingBtnListener = () => {
         _el_scrollBtn.forEach((btn) => {
             btn.addEventListener('click', function (e) {
@@ -37,6 +63,7 @@ export default function Nav(options = { nav: '.nav', addClass: 'nav-hideBg', bre
         })
     }
 
+    // * 點擊後滑動到該區塊
     this.scrollingTo = (btn) => {
         let targetSection = btn.dataset.scrollto
         const targetHeight =
@@ -47,19 +74,40 @@ export default function Nav(options = { nav: '.nav', addClass: 'nav-hideBg', bre
         window.scrollTo({ top: targetHeight, behavior: 'smooth' })
     }
 
-    this.menuAppearanceByResize = () => {
-        window.innerWidth > _breakPoint ? vm.menuOpen() : vm.menuClose()
+    /** ==========================================================
+     *  * 監測目前捲動位置，加 .active 到 .nav-btn
+     */
+    this.scrollSpy = () => {
+        if (!options.scrollSpy) return
+        const current_offsetTop = window.scrollY
+        if (!_el_navScrollBtn) console.error('找不到 .nav-btn[data-scrollTo]')
+        const navButtons = _el_navScrollBtn
+            .map((btn) => {
+                return btn !== undefined
+                    ? {
+                          btn: btn,
+                          offsetTop: document.getElementById(btn.dataset.scrollto).offsetTop,
+                      }
+                    : {}
+            })
+            .sort((a, b) => a.offsetTop - b.offsetTop)
+        const currentSection = navButtons.find((section) => section.offsetTop >= current_offsetTop)
+        _el_navScrollBtn.forEach((btn) => {
+            if (btn !== undefined && currentSection !== undefined) {
+                btn === currentSection.btn
+                    ? btn.classList.add('active')
+                    : btn.classList.remove('active')
+            }
+        })
     }
 
-    this.menuBarClick = () => {
-        let isOpen = _el_menu.classList.contains('flex')
-        if (_el_menu) isOpen ? this.menuClose() : this.menuAllShow()
-    }
-
+    /** ==========================================================
+     *  * Nav 捲動方向 => 判斷捲動方向來隱藏/顯示 Nav
+     */
     this.scrollAndHide = () => {
+        if (!options.scrollingHide) return
         let scroll_position = window.scrollY
         let isScrollDown = scroll_position > scroll_last
-        // let scrollOffset = scroll_position - scroll_last
 
         // * 桌機與手機控制 nav 的開關不同
         if (window.innerWidth > _breakPoint) {
@@ -77,14 +125,20 @@ export default function Nav(options = { nav: '.nav', addClass: 'nav-hideBg', bre
         scroll_last = scroll_position
     }
 
-    // * Mobile menu
+    /** ==========================================================
+     *  * 點擊 nav-menu 後，隱藏或顯示 Nav (手機板的 Nav)
+     */
+    this.menuBarClick = () => {
+        let isOpen = _el_menu.classList.contains('flex')
+        if (_el_menu) isOpen ? this.menuClose() : this.menuAllShow()
+    }
+
     this.menuClose = () => {
         _el_menu.classList.remove('animate-fadeIn')
         _el_menu.classList.remove('flex')
         _el_menu.classList.add('animate-fadeOut')
     }
 
-    // * Mobile menu
     this.menuOpen = () => {
         _el_menu.classList.add('flex')
         _el_menu.classList.add('animate-fadeIn')
@@ -94,6 +148,7 @@ export default function Nav(options = { nav: '.nav', addClass: 'nav-hideBg', bre
     this.menuHideBg = () => {
         _el_nav.classList.add(_class_navHideBg)
     }
+
     this.menuShowBg = () => {
         _el_nav.classList.remove(_class_navHideBg)
     }
@@ -102,6 +157,7 @@ export default function Nav(options = { nav: '.nav', addClass: 'nav-hideBg', bre
         this.menuOpen()
         this.menuShowBg()
     }
+
     this.menuAllHide = () => {
         this.menuClose()
         this.menuHideBg()

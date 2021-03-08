@@ -91,4 +91,22 @@
     .video-container iframe {
         @apply absolute top-0 left-0 w-h-full;
     }
+
+    .section-title-line {
+        @apply flex;
+    }
+
+    .section-title-line:before,
+    .section-title-line:after {
+        @apply relative top-4 flex-grow border-t-3 border-primary;
+        content: '';
+    }
+
+    .section-title-line:before {
+        @apply mr-5;
+    }
+
+    .section-title-line:after {
+        @apply ml-5;
+    }
 }
